@@ -18,7 +18,6 @@ export default function LoginPage() {
       });
 
       const data = await res.json().catch(() => ({}));
-
       if (!res.ok) {
         setError(data?.error || "No se pudo iniciar sesión");
         return;
@@ -36,90 +35,82 @@ export default function LoginPage() {
     <main
       style={{
         minHeight: "100vh",
+        background: "linear-gradient(180deg,#f5f6fa,#ffffff)",
         display: "grid",
         placeItems: "center",
-        fontFamily: "Arial, sans-serif",
-        background: "#f5f5f7",
         padding: 20,
+        fontFamily: "Arial, sans-serif",
       }}
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: 420,
-          background: "white",
-          borderRadius: 16,
-          padding: 24,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-          border: "1px solid rgba(0,0,0,0.06)",
-        }}
-      >
-        <div style={{ fontSize: 26, fontWeight: 700, marginBottom: 6 }}>
-          ARKHE OS
-        </div>
-        <div style={{ color: "#666", marginBottom: 20 }}>
-          Ingresá para continuar
+      <div style={{ width: "100%", maxWidth: 420 }}>
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: 34, fontWeight: 900, letterSpacing: -0.5 }}>ARKHE OS</div>
+          <div style={{ color: "#666" }}>Ingresá para continuar</div>
         </div>
 
-        <label style={{ fontSize: 12, color: "#666" }}>Email</label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email"
+        <div
           style={{
-            width: "100%",
-            padding: "12px 12px",
-            borderRadius: 12,
-            border: "1px solid #ddd",
-            marginTop: 6,
-            marginBottom: 14,
-            outline: "none",
-          }}
-        />
-
-        <label style={{ fontSize: 12, color: "#666" }}>Password</label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
-          type="password"
-          style={{
-            width: "100%",
-            padding: "12px 12px",
-            borderRadius: 12,
-            border: "1px solid #ddd",
-            marginTop: 6,
-            marginBottom: 14,
-            outline: "none",
-          }}
-        />
-
-        <button
-          onClick={login}
-          disabled={loading}
-          style={{
-            width: "100%",
-            padding: "12px 14px",
-            borderRadius: 12,
-            border: "none",
-            background: "black",
-            color: "white",
-            fontWeight: 700,
-            cursor: "pointer",
-            opacity: loading ? 0.7 : 1,
+            background: "white",
+            borderRadius: 16,
+            padding: 22,
+            border: "1px solid rgba(0,0,0,0.07)",
+            boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
           }}
         >
-          {loading ? "Entrando..." : "Entrar"}
-        </button>
+          <label style={{ fontSize: 12, color: "#666" }}>Email</label>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={{
+              width: "100%",
+              marginTop: 6,
+              marginBottom: 12,
+              padding: "12px 12px",
+              borderRadius: 12,
+              border: "1px solid #ddd",
+              outline: "none",
+            }}
+          />
 
-        {error && (
-          <div style={{ marginTop: 12, color: "crimson", fontSize: 13 }}>
-            Error: {error}
-          </div>
-        )}
+          <label style={{ fontSize: 12, color: "#666" }}>Password</label>
+          <input
+            value={password}
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              width: "100%",
+              marginTop: 6,
+              marginBottom: 14,
+              padding: "12px 12px",
+              borderRadius: 12,
+              border: "1px solid #ddd",
+              outline: "none",
+            }}
+          />
 
-        <div style={{ marginTop: 14, fontSize: 12, color: "#888" }}>
-          Tip: más adelante esto se conecta con permisos y roles (ADMIN/USER).
+          <button
+            onClick={login}
+            disabled={loading}
+            style={{
+              width: "100%",
+              padding: "12px 14px",
+              borderRadius: 12,
+              border: "none",
+              background: "black",
+              color: "white",
+              fontWeight: 800,
+              cursor: "pointer",
+              opacity: loading ? 0.7 : 1,
+            }}
+          >
+            {loading ? "Entrando..." : "Entrar"}
+          </button>
+
+          {error && <div style={{ marginTop: 10, color: "crimson", fontSize: 13 }}>Error: {error}</div>}
+        </div>
+
+        <div style={{ marginTop: 14, color: "#888", fontSize: 12 }}>
+          Tip: el rol (ADMIN/USER) determina permisos y visibilidad.
         </div>
       </div>
     </main>

@@ -7,6 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  proyectos Proyecto[]
+  createdAt DateTime @default(now())
+}
+
+model Proyecto {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  ownerId   Int
+  owner     User     @relation(fields: [ownerId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
 model Empresa {
   id        Int      @id @default(autoincrement())
   nombre    String
@@ -40,3 +70,4 @@ enum Role {
   ADMIN
   USER
 }
+

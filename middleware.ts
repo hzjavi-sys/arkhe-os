@@ -25,21 +25,18 @@ async function isValidSession(token: string) {
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Permitir siempre recursos internos y auth
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/favicon.ico") ||
-    pathname.startsWith("/api/auth")
-  ) {
+  // ✅ Nunca interceptar APIs (evita redirect rompiendo fetch)
+  if (pathname.startsWith("/api")) return NextResponse.next();
+
+  // Permitir recursos internos
+  if (pathname.startsWith("/_next") || pathname.startsWith("/favicon.ico")) {
     return NextResponse.next();
   }
 
-  // Permitir la página de login
-  if (pathname.startsWith("/login")) {
-    return NextResponse.next();
-  }
+  // Permitir login
+  if (pathname.startsWith("/login")) return NextResponse.next();
 
-  // Proteger el resto
+  // Proteger el resto (páginas)
   const token = getToken(req);
   if (!token || !(await isValidSession(token))) {
     const url = req.nextUrl.clone();
@@ -50,7 +47,6 @@ export async function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
-// Aplica a todo menos /api/auth (lo filtramos arriba)
 export const config = {
-  matcher: ["/((?!api/auth).*)"],
+  matcher: ["/((?!_next|favicon.ico).*)"],
 };
