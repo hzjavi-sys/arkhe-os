@@ -2,48 +2,126 @@
 import React from "react";
 
 export default function LoginPage() {
-  const [user, setUser] = React.useState("");
-  const [pass, setPass] = React.useState("");
+  const [email, setEmail] = React.useState("admin@arkhe.com");
+  const [password, setPassword] = React.useState("1234");
   const [error, setError] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState(false);
 
-  const entrar = async () => {
+  const login = async () => {
+    setLoading(true);
     setError(null);
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ user, pass }),
-    });
+    try {
+      const res = await fetch("/api/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const txt = await res.text();
-    let data: any = {};
-    try { data = JSON.parse(txt); } catch {}
+      const data = await res.json().catch(() => ({}));
 
-    if (!res.ok || !data?.ok) {
-      setError(data?.error || "Credenciales incorrectas");
-      return;
+      if (!res.ok) {
+        setError(data?.error || "No se pudo iniciar sesión");
+        return;
+      }
+
+      window.location.href = "/";
+    } catch (e: any) {
+      setError(e?.message || "Error");
+    } finally {
+      setLoading(false);
     }
-    window.location.href = "/";
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "grid", placeItems: "center", padding: 20 }}>
-      <div style={{ width: 420, border: "1px solid #ddd", borderRadius: 14, padding: 18, background: "white" }}>
-        <h2 style={{ margin: 0 }}>ARKHE OS</h2>
-        <p style={{ marginTop: 6, color: "#666" }}>Login</p>
+    <main
+      style={{
+        minHeight: "100vh",
+        display: "grid",
+        placeItems: "center",
+        fontFamily: "Arial, sans-serif",
+        background: "#f5f5f7",
+        padding: 20,
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          maxWidth: 420,
+          background: "white",
+          borderRadius: 16,
+          padding: 24,
+          boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+          border: "1px solid rgba(0,0,0,0.06)",
+        }}
+      >
+        <div style={{ fontSize: 26, fontWeight: 700, marginBottom: 6 }}>
+          ARKHE OS
+        </div>
+        <div style={{ color: "#666", marginBottom: 20 }}>
+          Ingresá para continuar
+        </div>
 
-        <label>Usuario</label>
-        <input value={user} onChange={(e) => setUser(e.target.value)} style={{ width: "100%", padding: 10, marginTop: 6 }} />
+        <label style={{ fontSize: 12, color: "#666" }}>Email</label>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email"
+          style={{
+            width: "100%",
+            padding: "12px 12px",
+            borderRadius: 12,
+            border: "1px solid #ddd",
+            marginTop: 6,
+            marginBottom: 14,
+            outline: "none",
+          }}
+        />
 
-        <label style={{ display: "block", marginTop: 10 }}>Contraseña</label>
-        <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} style={{ width: "100%", padding: 10, marginTop: 6 }} />
+        <label style={{ fontSize: 12, color: "#666" }}>Password</label>
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
+          type="password"
+          style={{
+            width: "100%",
+            padding: "12px 12px",
+            borderRadius: 12,
+            border: "1px solid #ddd",
+            marginTop: 6,
+            marginBottom: 14,
+            outline: "none",
+          }}
+        />
 
-        {error && <div style={{ marginTop: 10, color: "crimson" }}>{error}</div>}
-
-        <button onClick={entrar} style={{ marginTop: 12, width: "100%", padding: 12, background: "black", color: "white", borderRadius: 10 }}>
-          Entrar
+        <button
+          onClick={login}
+          disabled={loading}
+          style={{
+            width: "100%",
+            padding: "12px 14px",
+            borderRadius: 12,
+            border: "none",
+            background: "black",
+            color: "white",
+            fontWeight: 700,
+            cursor: "pointer",
+            opacity: loading ? 0.7 : 1,
+          }}
+        >
+          {loading ? "Entrando..." : "Entrar"}
         </button>
+
+        {error && (
+          <div style={{ marginTop: 12, color: "crimson", fontSize: 13 }}>
+            Error: {error}
+          </div>
+        )}
+
+        <div style={{ marginTop: 14, fontSize: 12, color: "#888" }}>
+          Tip: más adelante esto se conecta con permisos y roles (ADMIN/USER).
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
