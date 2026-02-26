@@ -2,24 +2,44 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { readCookieFromRequest, verifySession } from "@/lib/auth";
 
-async function requireAdmin(req: Request) {
+async function getSessionWithEmpresa(req: Request) {
   const token = readCookieFromRequest(req);
   if (!token) return null;
+
   try {
-    const session = await verifySession(token);
-    if (session.role !== "ADMIN") return null;
-    return session;
+    const s: any = await verifySession(token);
+
+    // Completar empresaId desde DB si falta
+    let empresaId = Number(s.empresaId || 0);
+    if (!empresaId) {
+      const u = await prisma.user.findUnique({
+        where: { id: Number(s.userId) },
+        select: { empresaId: true, role: true, email: true },
+      });
+      empresaId = Number(u?.empresaId || 0);
+      // mantener role/email desde token si existen
+      s.empresaId = empresaId;
+    }
+
+    return s;
   } catch {
     return null;
   }
 }
 
 export async function GET(request: Request) {
-  const admin = await requireAdmin(request);
-  if (!admin) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  const s = await getSessionWithEmpresa(request);
+  if (!s) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
+  if (s.role !== "ADMIN" && s.role !== "SUPERADMIN") {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
+
+  const where = s.role === "SUPERADMIN" ? {} : { empresaId: Number(s.empresaId) };
 
   const users = await prisma.user.findMany({
-    select: { id: true, email: true, role: true, createdAt: true },
+    where,
+    select: { id: true, email: true, role: true, createdAt: true, empresaId: true },
     orderBy: { createdAt: "desc" },
   });
 
@@ -27,34 +47,41 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const admin = await requireAdmin(request);
-  if (!admin) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  const s = await getSessionWithEmpresa(request);
+  if (!s) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
+  if (s.role !== "ADMIN" && s.role !== "SUPERADMIN") {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
 
   const body = await request.json();
   const email = String(body?.email || "").trim();
   const password = String(body?.password || "");
   const role = (String(body?.role || "USER").toUpperCase() === "ADMIN") ? "ADMIN" : "USER";
 
-  if (!email || !password) {
-    return NextResponse.json({ error: "email_y_password_requeridos" }, { status: 400 });
-  }
+  if (!email || !password) return NextResponse.json({ error: "email_y_password_requeridos" }, { status: 400 });
 
-  // Evitar duplicados
   const exists = await prisma.user.findUnique({ where: { email } });
   if (exists) return NextResponse.json({ error: "email_ya_existe" }, { status: 409 });
 
+  let empresaId = Number(s.empresaId);
+  if (s.role === "SUPERADMIN" && body?.empresaId) empresaId = Number(body.empresaId);
+
   const user = await prisma.user.create({
-    data: { email, password, role },
-    select: { id: true, email: true, role: true, createdAt: true },
+    data: { email, password, role, empresaId },
+    select: { id: true, email: true, role: true, createdAt: true, empresaId: true },
   });
 
   return NextResponse.json(user);
 }
 
-// PATCH: cambiar role y/o resetear password
 export async function PATCH(request: Request) {
-  const admin = await requireAdmin(request);
-  if (!admin) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  const s = await getSessionWithEmpresa(request);
+  if (!s) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+
+  if (s.role !== "ADMIN" && s.role !== "SUPERADMIN") {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
 
   const body = await request.json();
   const id = Number(body?.id);
@@ -63,18 +90,19 @@ export async function PATCH(request: Request) {
 
   if (!id) return NextResponse.json({ error: "id_requerido" }, { status: 400 });
 
-  const data: any = {};
-  if (role) data.role = (role === "ADMIN") ? "ADMIN" : "USER";
-  if (password) data.password = password;
-
-  if (Object.keys(data).length === 0) {
-    return NextResponse.json({ error: "nada_para_actualizar" }, { status: 400 });
+  if (s.role === "ADMIN") {
+    const target = await prisma.user.findFirst({ where: { id, empresaId: Number(s.empresaId) } });
+    if (!target) return NextResponse.json({ error: "not_found" }, { status: 404 });
   }
+
+  const data: any = {};
+  if (role) data.role = role === "SUPERADMIN" ? "SUPERADMIN" : (role === "ADMIN" ? "ADMIN" : "USER");
+  if (password) data.password = password;
 
   const updated = await prisma.user.update({
     where: { id },
     data,
-    select: { id: true, email: true, role: true, createdAt: true },
+    select: { id: true, email: true, role: true, createdAt: true, empresaId: true },
   });
 
   return NextResponse.json(updated);
