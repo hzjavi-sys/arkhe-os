@@ -12,6 +12,7 @@ model Empresa {
   nombre    String
   usuarios  User[]
   proyectos Proyecto[]
+  notas     Nota[]
   createdAt DateTime @default(now())
 }
 
@@ -36,7 +37,17 @@ model Proyecto {
   createdAt DateTime @default(now())
 }
 
+model Nota {
+  id        Int      @id @default(autoincrement())
+  titulo    String
+  contenido String
+  empresaId Int
+  empresa   Empresa  @relation(fields: [empresaId], references: [id])
+  createdAt DateTime @default(now())
+}
+
 enum Role {
+  SUPERADMIN
   ADMIN
   USER
 }

@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 
-type Proyecto = { id: number; nombre: string; ownerId: number; createdAt: string };
-type Me = { userId: number; email: string; role: "ADMIN" | "USER" };
+type Proyecto = { id: number; nombre: string; ownerId: number; empresaId: number; createdAt: string };
+type Me = { userId: number; email: string; role: "SUPERADMIN" | "ADMIN" | "USER"; empresaId: number };
 
 export default function Home() {
   const [me, setMe] = React.useState<Me | null>(null);
   const [proyectos, setProyectos] = React.useState<Proyecto[]>([]);
   const [nombre, setNombre] = React.useState("");
   const [ownerEmail, setOwnerEmail] = React.useState("");
+  const [empresaIdCrear, setEmpresaIdCrear] = React.useState("");
 
   const logout = async () => {
     await fetch("/api/logout", { method: "POST" });
@@ -27,16 +28,14 @@ export default function Home() {
     setProyectos(Array.isArray(data) ? data : []);
   };
 
-  React.useEffect(() => {
-    cargarMe();
-    cargar();
-  }, []);
+  React.useEffect(() => { cargarMe(); cargar(); }, []);
 
   const crear = async () => {
     if (!nombre.trim()) return;
-
     const payload: any = { nombre };
-    if (me?.role === "ADMIN" && ownerEmail.trim()) payload.ownerEmail = ownerEmail.trim();
+
+    if ((me?.role === "ADMIN" || me?.role === "SUPERADMIN") && ownerEmail.trim()) payload.ownerEmail = ownerEmail.trim();
+    if (me?.role === "SUPERADMIN" && empresaIdCrear.trim()) payload.empresaId = Number(empresaIdCrear);
 
     await fetch("/api/proyectos", {
       method: "POST",
@@ -44,8 +43,7 @@ export default function Home() {
       body: JSON.stringify(payload),
     });
 
-    setNombre("");
-    setOwnerEmail("");
+    setNombre(""); setOwnerEmail(""); setEmpresaIdCrear("");
     cargar();
   };
 
@@ -58,51 +56,65 @@ export default function Home() {
     cargar();
   };
 
+  const canAdminUsers = me?.role === "ADMIN" || me?.role === "SUPERADMIN";
+  const canAdminEmpresas = me?.role === "SUPERADMIN";
+
   return (
-    <main style={{ padding: 40, fontFamily: "Arial, sans-serif" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div>
-          <h1 style={{ margin: 0 }}>ARKHE OS</h1>
-          <p style={{ marginTop: 6, color: "#666" }}>
-            {me ? `${me.email} (${me.role})` : "Cargando usuario..."}
-          </p>
+    <main style={{ fontFamily: "Arial, sans-serif", display: "grid", gridTemplateColumns: "240px 1fr", minHeight: "100vh" }}>
+      <aside style={{ borderRight: "1px solid #eee", padding: 18 }}>
+        <div style={{ fontWeight: 800, fontSize: 18 }}>ARKHE OS</div>
+        <div style={{ color: "#666", marginTop: 6, fontSize: 12 }}>
+          {me ? `${me.email}` : "Cargando..."}
+        </div>
+        <div style={{ color: "#666", marginTop: 6, fontSize: 12 }}>
+          {me ? `role=${me.role} · empresaId=${me.empresaId}` : ""}
         </div>
 
-        <div style={{ display: "flex", gap: 10 }}>
-          <a href="/admin/users" style={{ padding: "8px 12px", borderRadius: 10, border: "1px solid #ddd", textDecoration: "none", color: "black" }}>
-            Admin Usuarios
-          </a>
-          <button onClick={logout} style={{ padding: "8px 12px", borderRadius: 10, border: "none", background: "black", color: "white" }}>
-            Salir
+        <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+          <a href="/" style={{ textDecoration: "none", color: "black", padding: 10, borderRadius: 10, background: "#f6f6f6" }}>Proyectos</a>
+          <a href="/notas" style={{ textDecoration: "none", color: "black", padding: 10, borderRadius: 10, background: "#f6f6f6" }}>Notas</a>
+          {canAdminUsers && <a href="/admin/users" style={{ textDecoration: "none", color: "black", padding: 10, borderRadius: 10, background: "#f6f6f6" }}>Admin Usuarios</a>}
+          {canAdminEmpresas && <a href="/admin/empresas" style={{ textDecoration: "none", color: "black", padding: 10, borderRadius: 10, background: "#f6f6f6" }}>Admin Empresas</a>}
+          <button onClick={logout} style={{ marginTop: 10, padding: 10, borderRadius: 10, border: "none", background: "black", color: "white" }}>Salir</button>
+        </div>
+      </aside>
+
+      <section style={{ padding: 24 }}>
+        <h1 style={{ marginTop: 0 }}>Proyectos</h1>
+
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+          <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre del proyecto" style={{ padding: "10px 12px", minWidth: 260 }} />
+
+          {(me?.role === "ADMIN" || me?.role === "SUPERADMIN") && (
+            <input value={ownerEmail} onChange={(e) => setOwnerEmail(e.target.value)} placeholder="Owner email (ADMIN)" style={{ padding: "10px 12px", minWidth: 260 }} />
+          )}
+
+          {me?.role === "SUPERADMIN" && (
+            <input value={empresaIdCrear} onChange={(e) => setEmpresaIdCrear(e.target.value)} placeholder="empresaId (SUPERADMIN)" style={{ padding: "10px 12px", width: 200 }} />
+          )}
+
+          <button onClick={crear} style={{ padding: "10px 14px", background: "black", color: "white", border: "none", borderRadius: 10 }}>
+            Crear
           </button>
         </div>
-      </div>
 
-      <div style={{ marginTop: 20, display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre del proyecto" style={{ padding: "8px 10px", minWidth: 260 }} />
-
-        {me?.role === "ADMIN" && (
-          <input value={ownerEmail} onChange={(e) => setOwnerEmail(e.target.value)} placeholder="Owner email (solo ADMIN)" style={{ padding: "8px 10px", minWidth: 260 }} />
-        )}
-
-        <button onClick={crear} style={{ padding: "8px 12px", background: "black", color: "white", border: "none", borderRadius: 8 }}>
-          Crear
-        </button>
-      </div>
-
-      <div style={{ marginTop: 30 }}>
-        <h3>Proyectos</h3>
-        {proyectos.length === 0 && <p style={{ color: "#777" }}>Aún no hay proyectos.</p>}
-
-        {proyectos.map((p) => (
-          <div key={p.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: 10, background: "#f2f2f2", borderRadius: 10, marginBottom: 10, maxWidth: 620 }}>
-            <span>• {p.nombre} <span style={{ color: "#666", fontSize: 12 }}>(ownerId: {p.ownerId})</span></span>
-            <button onClick={() => borrar(p.id)} style={{ background: "#ef4444", color: "white", border: "none", padding: "6px 10px", borderRadius: 8 }}>
-              Borrar
-            </button>
-          </div>
-        ))}
-      </div>
+        <div style={{ marginTop: 20, maxWidth: 900 }}>
+          {proyectos.length === 0 && <p style={{ color: "#666" }}>Aún no hay proyectos.</p>}
+          {proyectos.map((p) => (
+            <div key={p.id} style={{ border: "1px solid #eee", borderRadius: 12, padding: 12, marginBottom: 10, display: "flex", justifyContent: "space-between", gap: 10 }}>
+              <div>
+                <b>{p.nombre}</b>
+                <div style={{ color: "#666", marginTop: 6, fontSize: 12 }}>
+                  ownerId={p.ownerId} · empresaId={p.empresaId}
+                </div>
+              </div>
+              <button onClick={() => borrar(p.id)} style={{ background: "#ef4444", color: "white", border: "none", padding: "8px 12px", borderRadius: 10, height: 40 }}>
+                Borrar
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

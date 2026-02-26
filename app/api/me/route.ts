@@ -9,7 +9,6 @@ export async function GET(request: Request) {
   try {
     const session: any = await verifySession(token);
 
-    // Si el token no trae empresaId, lo buscamos en DB
     let empresaId = Number(session.empresaId || 0);
     if (!empresaId) {
       const u = await prisma.user.findUnique({
