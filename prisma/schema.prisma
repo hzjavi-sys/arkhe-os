@@ -13,6 +13,7 @@ model Empresa {
   usuarios  User[]
   proyectos Proyecto[]
   notas     Nota[]
+  apps      App[]
   createdAt DateTime @default(now())
 }
 
@@ -24,6 +25,7 @@ model User {
   empresaId Int
   empresa   Empresa  @relation(fields: [empresaId], references: [id])
   proyectos Proyecto[]
+  apps      App[]
   createdAt DateTime @default(now())
 }
 
@@ -41,6 +43,18 @@ model Nota {
   id        Int      @id @default(autoincrement())
   titulo    String
   contenido String
+  empresaId Int
+  empresa   Empresa  @relation(fields: [empresaId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model App {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  tipo      String   @default("web")   // web | mobile | api
+  estado    String   @default("draft") // draft | building | deployed
+  ownerId   Int
+  owner     User     @relation(fields: [ownerId], references: [id])
   empresaId Int
   empresa   Empresa  @relation(fields: [empresaId], references: [id])
   createdAt DateTime @default(now())
