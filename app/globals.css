@@ -77,3 +77,87 @@ body::before{
   font-weight: 900;
   cursor: pointer;
 }
+
+
+/* ARKHE_UI_HIBRIDO_V1 */
+:root {
+  --arkhe-bg1: #0b1220;          /* base tech */
+  --arkhe-bg2: #0f1b2e;          /* profundidad */
+  --arkhe-ink: #0b1220;          /* texto oscuro sobre tarjetas claras */
+  --arkhe-text: #e8eefc;         /* texto claro sobre fondos oscuros */
+  --arkhe-muted: rgba(232,238,252,.70);
+  --arkhe-card: rgba(255,255,255,.88); /* corporate premium */
+  --arkhe-card2: rgba(255,255,255,.78);
+  --arkhe-border: rgba(148,163,184,.25);
+  --arkhe-accent: #6d28d9;       /* violeta IA */
+  --arkhe-accent2: #22c55e;      /* verde “ok” */
+  --arkhe-danger: #ef4444;
+  --arkhe-shadow: 0 18px 60px rgba(0,0,0,.25);
+  --arkhe-radius: 18px;
+  --arkhe-brain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='30%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%2394a3b8' stop-opacity='.22'/%3E%3Cstop offset='55%25' stop-color='%231e293b' stop-opacity='.10'/%3E%3Cstop offset='100%25' stop-color='%230b1220' stop-opacity='.00'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23g)'/%3E%3Cg fill='none' stroke='%23a78bfa' stroke-opacity='.35' stroke-width='3'%3E%3Cpath d='M430 470c-30-120 60-230 190-250 100-15 160 30 200 80 40-65 115-110 220-90 120 25 190 145 165 260-20 90-80 135-155 170-70 30-140 65-230 60-95-5-150-40-215-70-85-40-150-70-175-160z'/%3E%3Cpath d='M520 330c30 30 60 40 90 25 35-18 30-55 10-85'/%3E%3Cpath d='M585 520c25-20 55-20 85 0 35 25 70 25 110 0 40-25 80-25 120 0'/%3E%3Cpath d='M760 300c-20 30-15 60 15 85 28 22 55 20 80-5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html {
+  font-size: 120%; /* +20% */
+}
+
+body {
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(109,40,217,.20), transparent 60%),
+              radial-gradient(900px 500px at 80% 30%, rgba(34,197,94,.12), transparent 60%),
+              linear-gradient(180deg, var(--arkhe-bg2), var(--arkhe-bg1));
+  color: var(--arkhe-text);
+}
+
+.arkhe-shell {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.arkhe-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--arkhe-brain);
+  background-size: cover;
+  background-position: center;
+  opacity: .28;
+  filter: blur(0px) saturate(1.05);
+  pointer-events: none;
+}
+
+.arkhe-shell::after {
+  /* “light sweep” profesional */
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 60%;
+  height: 180%;
+  transform: rotate(20deg);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,.10) 45%,
+    rgba(255,255,255,.22) 50%,
+    rgba(255,255,255,.10) 55%,
+    transparent 100%);
+  animation: arkhe_sweep 10s linear infinite;
+  opacity: .55;
+  pointer-events: none;
+}
+
+@keyframes arkhe_sweep {
+  0%   { transform: translateX(0) rotate(20deg); }
+  100% { transform: translateX(260%) rotate(20deg); }
+}
+
+.arkhe-surface {
+  position: relative;
+  z-index: 1;
+  background: var(--arkhe-card);
+  border: 1px solid var(--arkhe-border);
+  border-radius: var(--arkhe-radius);
+  box-shadow: var(--arkhe-shadow);
+  backdrop-filter: blur(10px);
+}
+

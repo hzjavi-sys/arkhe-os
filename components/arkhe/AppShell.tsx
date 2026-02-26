@@ -99,7 +99,7 @@ export default function AppShell({ title = "ARKHE OS", subtitle, children }: Pro
   };
 
   return (
-    <div style={css.page}>
+    <div className="arkhe-shell" style={css.page}>
       <style>{`
         @keyframes arkhe_sweep {
           0%   { transform: translateX(-70%) rotate(8deg); opacity: 0.0; }
