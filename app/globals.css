@@ -1,26 +1,79 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg0:#0b0f1a;
+  --bg1:#0f1629;
+  --bg2:#121c33;
+  --border:#22304f;
+  --text:#e6edf7;
+  --muted:#a8b3c7;
+  --accent:#7c5cff;
+  --accent2:#22c55e;
+  --danger:#ef4444;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body { height: 100%; }
+body{
+  margin:0;
+  color: var(--text);
+  background:
+    radial-gradient(900px 700px at 15% 20%, rgba(124,92,255,.18), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(34,197,94,.10), transparent 55%),
+    radial-gradient(900px 700px at 60% 90%, rgba(59,130,246,.10), transparent 55%),
+    linear-gradient(135deg, #070a12, var(--bg0), #070a12);
+  animation: arkheGlow 16s ease-in-out infinite;
+}
+@keyframes arkheGlow{ 0%{filter:saturate(110%)} 50%{filter:saturate(140%)} 100%{filter:saturate(110%)} }
+
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: .25;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.arkhe-card{
+  background: rgba(15,22,41,.78);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  backdrop-filter: blur(8px);
 }
+.arkhe-input{
+  background: rgba(18,28,51,.85);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+.arkhe-input::placeholder{ color: rgba(168,179,199,.7); }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.arkhe-btn{
+  background: var(--accent);
+  border: 1px solid rgba(255,255,255,.12);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.arkhe-btn-ghost{
+  background: rgba(18,28,51,.60);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.arkhe-btn-danger{
+  background: var(--danger);
+  border: 1px solid rgba(255,255,255,.12);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
 }

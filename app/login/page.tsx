@@ -1,118 +1,99 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 
 export default function LoginPage() {
-  const [email, setEmail] = React.useState("admin@arkhe.com");
-  const [password, setPassword] = React.useState("1234");
-  const [error, setError] = React.useState<string | null>(null);
-  const [loading, setLoading] = React.useState(false);
+  const [email, setEmail] = useState("admin@arkhe.com");
+  const [password, setPassword] = useState("1234");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const login = async () => {
+  async function entrar() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/auth", {
+      const r = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setError(data?.error || "No se pudo iniciar sesión");
+      const data = await r.json().catch(() => null);
+      if (!r.ok) {
+        setError(data?.error || "Error");
         return;
       }
 
-      window.location.href = "/";
+      // ✅ SIEMPRE al Home después de loguear
+      window.location.href = "/home";
     } catch (e: any) {
-      setError(e?.message || "Error");
+      setError(String(e?.message || e));
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "linear-gradient(180deg,#f5f6fa,#ffffff)",
-        display: "grid",
-        placeItems: "center",
-        padding: 20,
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <div style={{ width: "100%", maxWidth: 420 }}>
-        <div style={{ marginBottom: 16 }}>
-          <div style={{ fontSize: 34, fontWeight: 900, letterSpacing: -0.5 }}>ARKHE OS</div>
-          <div style={{ color: "#666" }}>Ingresá para continuar</div>
+    <div style={{
+      minHeight:"100vh",
+      display:"flex",
+      alignItems:"center",
+      justifyContent:"center",
+      fontFamily:"system-ui, -apple-system, Segoe UI, Roboto, Arial",
+      background:"linear-gradient(180deg,#eef2ff,#f8fafc,#fff)",
+      padding: 18
+    }}>
+      <div style={{
+        width: 420,
+        borderRadius: 18,
+        border:"1px solid rgba(15,23,42,0.10)",
+        background:"rgba(255,255,255,0.92)",
+        boxShadow:"0 18px 60px rgba(2,6,23,0.10)",
+        padding: 18
+      }}>
+        <div style={{fontWeight:900, fontSize:22}}>ARKHE OS</div>
+        <div style={{color:"#64748b", fontWeight:700, marginTop:4}}>Ingresá para continuar</div>
+
+        <div style={{marginTop:14}}>
+          <div style={{fontWeight:800, marginBottom:6}}>Email</div>
+          <input value={email} onChange={(e)=>setEmail(e.target.value)} style={inp}/>
         </div>
 
-        <div
-          style={{
-            background: "white",
-            borderRadius: 16,
-            padding: 22,
-            border: "1px solid rgba(0,0,0,0.07)",
-            boxShadow: "0 14px 35px rgba(0,0,0,0.08)",
-          }}
-        >
-          <label style={{ fontSize: 12, color: "#666" }}>Email</label>
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={{
-              width: "100%",
-              marginTop: 6,
-              marginBottom: 12,
-              padding: "12px 12px",
-              borderRadius: 12,
-              border: "1px solid #ddd",
-              outline: "none",
-            }}
-          />
-
-          <label style={{ fontSize: 12, color: "#666" }}>Password</label>
-          <input
-            value={password}
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            style={{
-              width: "100%",
-              marginTop: 6,
-              marginBottom: 14,
-              padding: "12px 12px",
-              borderRadius: 12,
-              border: "1px solid #ddd",
-              outline: "none",
-            }}
-          />
-
-          <button
-            onClick={login}
-            disabled={loading}
-            style={{
-              width: "100%",
-              padding: "12px 14px",
-              borderRadius: 12,
-              border: "none",
-              background: "black",
-              color: "white",
-              fontWeight: 800,
-              cursor: "pointer",
-              opacity: loading ? 0.7 : 1,
-            }}
-          >
-            {loading ? "Entrando..." : "Entrar"}
-          </button>
-
-          {error && <div style={{ marginTop: 10, color: "crimson", fontSize: 13 }}>Error: {error}</div>}
+        <div style={{marginTop:14}}>
+          <div style={{fontWeight:800, marginBottom:6}}>Password</div>
+          <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} style={inp}/>
         </div>
 
-        <div style={{ marginTop: 14, color: "#888", fontSize: 12 }}>
-          Tip: el rol (ADMIN/USER) determina permisos y visibilidad.
+        <button onClick={entrar} disabled={loading} style={btn}>
+          {loading ? "Entrando..." : "Entrar"}
+        </button>
+
+        {error && <div style={{color:"#b91c1c", fontWeight:800, marginTop:10}}>Error: {error}</div>}
+
+        <div style={{marginTop:12, color:"#64748b", fontWeight:700, fontSize:12}}>
+          Tip: rol (ADMIN/USER) determina permisos.
         </div>
       </div>
-    </main>
+    </div>
   );
 }
+
+const inp: React.CSSProperties = {
+  width:"100%",
+  padding:"10px 12px",
+  borderRadius: 12,
+  border:"1px solid rgba(15,23,42,0.14)",
+  outline:"none"
+};
+
+const btn: React.CSSProperties = {
+  marginTop: 16,
+  width:"100%",
+  padding:"12px 14px",
+  borderRadius: 12,
+  border:"none",
+  background:"#0f172a",
+  color:"white",
+  fontWeight:900,
+  cursor:"pointer"
+};

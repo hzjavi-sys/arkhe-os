@@ -1,70 +1,162 @@
 "use client";
-import React from "react";
 
-type Nota = { id: number; titulo: string; contenido: string; createdAt: string };
+import React, { useEffect, useState } from "react";
+import AppShell from "../../components/arkhe/AppShell";
+
+type Nota = { id: number; titulo: string; contenido?: string | null; createdAt: string };
 
 export default function NotasPage() {
-  const [notas, setNotas] = React.useState<Nota[]>([]);
-  const [titulo, setTitulo] = React.useState("");
-  const [contenido, setContenido] = React.useState("");
+  const [titulo, setTitulo] = useState("");
+  const [contenido, setContenido] = useState("");
+  const [rows, setRows] = useState<Nota[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  const cargar = async () => {
-    const res = await fetch("/api/notas", { cache: "no-store" });
-    const data = await res.json().catch(() => []);
-    setNotas(Array.isArray(data) ? data : []);
-  };
+  async function cargar() {
+    setLoading(true);
+    try {
+      const r = await fetch("/api/notas", { cache: "no-store" });
+      const data = r.ok ? await r.json() : [];
+      setRows(Array.isArray(data) ? data : []);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-  React.useEffect(() => { cargar(); }, []);
+  useEffect(() => {
+    cargar();
+  }, []);
 
-  const crear = async () => {
+  async function crear() {
     if (!titulo.trim()) return;
     await fetch("/api/notas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ titulo, contenido }),
     });
-    setTitulo(""); setContenido("");
-    cargar();
-  };
+    setTitulo("");
+    setContenido("");
+    await cargar();
+  }
 
-  const borrar = async (id: number) => {
+  async function borrar(id: number) {
     await fetch("/api/notas", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id }),
     });
-    cargar();
-  };
+    await cargar();
+  }
 
   return (
-    <main style={{ padding: 30, fontFamily: "Arial, sans-serif" }}>
-      <h1 style={{ marginTop: 0 }}>Notas</h1>
-
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-        <input value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" style={{ padding: "10px 12px", minWidth: 260 }} />
-        <input value={contenido} onChange={(e) => setContenido(e.target.value)} placeholder="Contenido (opcional)" style={{ padding: "10px 12px", minWidth: 360 }} />
-        <button onClick={crear} style={{ padding: "10px 14px", background: "black", color: "white", border: "none", borderRadius: 10 }}>
-          Crear
-        </button>
-        <a href="/" style={{ marginLeft: "auto", textDecoration: "none", border: "1px solid #ddd", padding: "10px 14px", borderRadius: 10, color: "black" }}>
-          ← Volver
-        </a>
+    <AppShell title="Notas">
+      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 10, marginBottom: 14 }}>
+        <input
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+          placeholder="Título"
+          style={{
+            padding: "10px 12px",
+            borderRadius: 12,
+            background: "rgba(255,255,255,.05)",
+            border: "1px solid rgba(255,255,255,.10)",
+            color: "#e5e7eb",
+            outline: "none",
+          }}
+        />
+        <textarea
+          value={contenido}
+          onChange={(e) => setContenido(e.target.value)}
+          placeholder="Contenido (opcional)"
+          rows={4}
+          style={{
+            padding: "10px 12px",
+            borderRadius: 12,
+            background: "rgba(255,255,255,.05)",
+            border: "1px solid rgba(255,255,255,.10)",
+            color: "#e5e7eb",
+            outline: "none",
+            resize: "vertical",
+          }}
+        />
+        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <button
+            onClick={crear}
+            style={{
+              background: "linear-gradient(90deg, rgba(59,130,246,.9), rgba(168,85,247,.9))",
+              border: "none",
+              color: "white",
+              padding: "10px 14px",
+              borderRadius: 12,
+              cursor: "pointer",
+              fontWeight: 900,
+            }}
+          >
+            Crear
+          </button>
+          <button
+            onClick={cargar}
+            style={{
+              background: "rgba(255,255,255,.06)",
+              border: "1px solid rgba(255,255,255,.12)",
+              color: "white",
+              padding: "10px 14px",
+              borderRadius: 12,
+              cursor: "pointer",
+              fontWeight: 900,
+            }}
+          >
+            Actualizar
+          </button>
+          {loading ? <span style={{ opacity: 0.7 }}>Cargando…</span> : null}
+        </div>
       </div>
 
-      <div style={{ marginTop: 20, maxWidth: 900 }}>
-        {notas.length === 0 && <p style={{ color: "#666" }}>Aún no hay notas.</p>}
-        {notas.map((n) => (
-          <div key={n.id} style={{ border: "1px solid #eee", borderRadius: 12, padding: 12, marginBottom: 10, display: "flex", justifyContent: "space-between", gap: 10 }}>
-            <div>
-              <b>{n.titulo}</b>
-              {n.contenido && <div style={{ color: "#555", marginTop: 6 }}>{n.contenido}</div>}
+      <div style={{ display: "grid", gap: 10 }}>
+        {rows.length === 0 ? (
+          <div style={{ opacity: 0.8 }}>No hay notas todavía.</div>
+        ) : (
+          rows.map((n) => (
+            <div
+              key={n.id}
+              style={{
+                border: "1px solid rgba(255,255,255,.10)",
+                borderRadius: 16,
+                padding: 14,
+                display: "flex",
+                justifyContent: "space-between",
+                gap: 12,
+                background: "rgba(255,255,255,.03)",
+              }}
+            >
+              <div style={{ minWidth: 0 }}>
+                <div style={{ fontWeight: 900 }}>{n.titulo}</div>
+                {n.contenido ? (
+                  <div style={{ opacity: 0.8, marginTop: 6, whiteSpace: "pre-wrap" }}>{n.contenido}</div>
+                ) : null}
+                <div style={{ opacity: 0.55, fontSize: 12, marginTop: 8 }}>
+                  {new Date(n.createdAt).toLocaleString()}
+                </div>
+              </div>
+              <button
+                onClick={() => borrar(n.id)}
+                style={{
+                  background: "#ef4444",
+                  border: "none",
+                  color: "white",
+                  padding: "10px 12px",
+                  borderRadius: 12,
+                  cursor: "pointer",
+                  fontWeight: 900,
+                  height: 42,
+                  flexShrink: 0,
+                }}
+              >
+                Borrar
+              </button>
             </div>
-            <button onClick={() => borrar(n.id)} style={{ background: "#ef4444", color: "white", border: "none", padding: "8px 12px", borderRadius: 10, height: 40 }}>
-              Borrar
-            </button>
-          </div>
-        ))}
+          ))
+        )}
       </div>
-    </main>
+    </AppShell>
   );
 }
