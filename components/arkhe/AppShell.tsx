@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-type Me = { userId: number; email: string; role: string; empresaId?: number | null };
+type Me = { userId: number; email: string; role: string; empresaId?: number | null } | null;
 
 export default function AppShell({
   title,
@@ -16,14 +16,21 @@ export default function AppShell({
   const router = useRouter();
   const pathname = usePathname();
 
-  const [me, setMe] = useState<Me | null>(null);
+  const [me, setMe] = useState<Me>(null);
   const [openProfile, setOpenProfile] = useState(false);
-  const profileRef = useRef<HTMLDivElement | null>(null);
+  const [openConfig, setOpenConfig] = useState(false);
 
-  async function loadMe() {
+  const profRef = useRef<HTMLDivElement | null>(null);
+  const cfgRef = useRef<HTMLDivElement | null>(null);
+
+  async function cargarMe() {
     try {
       const r = await fetch("/api/me", { cache: "no-store" });
-      const j = r.ok ? await r.json() : null;
+      if (!r.ok) {
+        setMe(null);
+        return;
+      }
+      const j = await r.json();
       setMe(j);
     } catch {
       setMe(null);
@@ -31,168 +38,144 @@ export default function AppShell({
   }
 
   useEffect(() => {
-    loadMe();
-  }, [pathname]);
+    cargarMe();
+  }, []);
 
   useEffect(() => {
     function onDoc(e: MouseEvent) {
-      if (!profileRef.current) return;
-      if (!profileRef.current.contains(e.target as any)) setOpenProfile(false);
+      const t = e.target as Node;
+      if (profRef.current && !profRef.current.contains(t)) setOpenProfile(false);
+      if (cfgRef.current && !cfgRef.current.contains(t)) setOpenConfig(false);
     }
-    document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
+    document.addEventListener("click", onDoc);
+    return () => document.removeEventListener("click", onDoc);
   }, []);
 
   async function logout() {
     try {
       await fetch("/api/logout", { method: "POST" });
     } finally {
-      setOpenProfile(false);
       setMe(null);
       router.push("/login");
       router.refresh();
     }
   }
 
-  const navItems = useMemo(
-    () => [
-      { href: "/home", label: "Home" },
-      { href: "/proyectos", label: "Operación" }, // después lo abrimos con submenú
-      { href: "/inteligencias", label: "Inteligencias" },
-      { href: "/integraciones", label: "Integraciones" },
-    ],
-    []
-  );
-
-  const styles: Record<string, React.CSSProperties> = {
+  const styles = {
     page: {
       minHeight: "100vh",
       fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial",
-      color: "#0f172a",
-    },
-
-    // ✅ Fondo: NO CAPTURA CLICS
-    bg: {
-      position: "fixed",
-      inset: 0,
-      zIndex: 0,
-      pointerEvents: "none",
-      backgroundImage: "url('https://images.unsplash.com/photo-1559757175-5700dde67558?auto=format&fit=crop&w=2400&q=80')",
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=80')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "fixed",
-      backgroundColor: "#0b1220",
-filter: "saturate(1.05)",
-    },
-    bgOverlay: {
-      position: "fixed",
-      inset: 0,
-      zIndex: 1,
-      pointerEvents: "none",
-      background: "rgba(255,255,255,0.72)",
-      backdropFilter: "blur(10px)",
-    },
+    } as React.CSSProperties,
 
-    // ✅ Contenido: arriba y clickeable
-    content: {
-      position: "relative",
-      zIndex: 2,
-    },
+    // 👇 ESTE ES EL “NO AZUL”: overlay BLANCO suave
+    overlay: {
+      minHeight: "100vh",
+      background: "rgba(255,255,255,0)",
+      backdropFilter: "blur(4px)",
+    } as React.CSSProperties,
 
     topbar: {
       position: "sticky",
       top: 0,
-      zIndex: 10,
-      background: "rgba(255,255,255,0.75)",
-      backdropFilter: "blur(10px)",
-      borderBottom: "1px solid rgba(15,23,42,.08)",
-    },
+      zIndex: 50,
+      background: "rgba(255,255,255,0)",
+      backdropFilter: "blur(6px)",
+      borderBottom: "1px solid rgba(15, 23, 42, 0.10)",
+    } as React.CSSProperties,
+
     topInner: {
       maxWidth: 1200,
       margin: "0 auto",
-      padding: "14px 16px",
       display: "flex",
       alignItems: "center",
-      gap: 16,
-      justifyContent: "space-between",
-    },
-    brand: {
-      display: "flex",
-      alignItems: "center",
-      gap: 10,
-      fontWeight: 900,
-      letterSpacing: 0.5,
-    },
-    dot: { width: 8, height: 8, borderRadius: 999, background: "#ef4444" },
-    nav: { display: "flex", alignItems: "center", gap: 10 },
-    pill: (active: boolean): React.CSSProperties => ({
-      padding: "8px 12px",
-      borderRadius: 999,
-      border: active ? "1px solid rgba(15,23,42,.25)" : "1px solid rgba(15,23,42,.10)",
-      background: active ? "rgba(15,23,42,.06)" : "rgba(255,255,255,.55)",
-      textDecoration: "none",
-      color: "#0f172a",
-      fontWeight: 700,
-      fontSize: 14,
-    }),
-    right: { display: "flex", alignItems: "center", gap: 10 },
+      gap: 14,
+      padding: "12px 16px",
+    } as React.CSSProperties,
+
+    brand: { display: "flex", alignItems: "center", gap: 10, fontWeight: 900, color: "#0f172a" } as React.CSSProperties,
+    dot: { width: 8, height: 8, borderRadius: 999, background: "#ef4444", display: "inline-block" } as React.CSSProperties,
+
+    nav: { display: "flex", alignItems: "center", gap: 10, marginLeft: 18 } as React.CSSProperties,
+
+    pill: (active: boolean) =>
+      ({
+        padding: "8px 14px",
+        borderRadius: 999,
+        border: active ? "1px solid rgba(15,23,42,0.25)" : "1px solid rgba(15,23,42,0.12)",
+        background: active ? "rgba(15,23,42,0.06)" : "rgba(255,255,255,0.85)",
+        color: "#0f172a",
+        fontWeight: 800,
+        textDecoration: "none",
+      } as React.CSSProperties),
+
+    right: { marginLeft: "auto", display: "flex", alignItems: "center", gap: 10 } as React.CSSProperties,
+
     iconBtn: {
-      width: 34,
-      height: 34,
-      borderRadius: 10,
-      border: "1px solid rgba(15,23,42,.12)",
-      background: "rgba(255,255,255,.7)",
-      display: "grid",
-      placeItems: "center",
+      width: 36,
+      height: 36,
+      borderRadius: 12,
+      border: "1px solid rgba(15,23,42,0.12)",
+      background: "rgba(255,255,255,0)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
       cursor: "pointer",
-    },
+    } as React.CSSProperties,
+
     dropdown: {
       position: "absolute",
-      top: 42,
+      top: 44,
       right: 0,
-      width: 220,
-      background: "white",
-      border: "1px solid rgba(15,23,42,.12)",
-      borderRadius: 12,
-      boxShadow: "0 20px 60px rgba(2,6,23,.16)",
-      overflow: "hidden",
-    },
+      width: 260,
+      borderRadius: 14,
+      border: "1px solid rgba(15,23,42,0.12)",
+      background: "rgba(255,255,255,0)",
+      backdropFilter: "blur(10px)",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.15)",
+      padding: 10,
+    } as React.CSSProperties,
+
+    ddTitle: { fontSize: 12, color: "#475569", fontWeight: 800, marginBottom: 8 } as React.CSSProperties,
+
     ddItem: {
       width: "100%",
       textAlign: "left",
-      padding: "12px 12px",
-      border: "none",
-      background: "white",
-      cursor: "pointer",
-      fontWeight: 700,
-      color: "#0f172a",
-    },
-    ddDanger: {
-      width: "100%",
-      textAlign: "left",
-      padding: "12px 12px",
-      border: "none",
-      background: "white",
+      padding: "10px 12px",
+      borderRadius: 12,
+      border: "1px solid rgba(15,23,42,0.10)",
+      background: "rgba(255,255,255,0)",
       cursor: "pointer",
       fontWeight: 800,
-      color: "#ef4444",
-    },
-    main: {
+      color: "#0f172a",
+    } as React.CSSProperties,
+
+    container: {
       maxWidth: 1200,
       margin: "0 auto",
-      padding: "22px 16px",
-    },
-    h1: { margin: 0, fontSize: 22, fontWeight: 900 },
-    sub: { marginTop: 4, color: "rgba(15,23,42,.72)", fontWeight: 600 },
+      padding: "26px 16px 70px",
+    } as React.CSSProperties,
+
+    card: {
+      background: "rgba(255,255,255,0)",
+      border: "1px solid rgba(15,23,42,0.10)",
+      borderRadius: 18,
+      padding: 20,
+      boxShadow: "0 18px 60px rgba(0,0,0,0.10)",
+    } as React.CSSProperties,
+
+    h1: { fontSize: 22, fontWeight: 950, margin: 0, color: "#0f172a" } as React.CSSProperties,
+    sub: { marginTop: 6, color: "#475569", fontWeight: 700 } as React.CSSProperties,
   };
 
   return (
     <div style={styles.page}>
-      <div style={styles.bg} />
-      <div style={styles.bgOverlay} />
-
-      <div style={styles.content}>
-        <header style={styles.topbar}>
+      <div style={styles.overlay}>
+        <div style={styles.topbar}>
           <div style={styles.topInner}>
             <div style={styles.brand}>
               <span style={styles.dot} />
@@ -200,63 +183,66 @@ filter: "saturate(1.05)",
             </div>
 
             <nav style={styles.nav}>
-              {navItems.map((it) => (
-                <Link
-                  key={it.href}
-                  href={it.href}
-                  style={styles.pill(pathname === it.href)}
-                >
-                  {it.label}
-                </Link>
-              ))}
+              <Link href="/home" style={styles.pill(pathname === "/home")}>Home</Link>
+              <Link href="/proyectos" style={styles.pill(pathname?.startsWith("/proyectos") || pathname === "/")}>Operación</Link>
+              <Link href="/inteligencias" style={styles.pill(pathname?.startsWith("/inteligencias"))}>Inteligencias</Link>
+              <Link href="/integraciones" style={styles.pill(pathname?.startsWith("/integraciones"))}>Integraciones</Link>
             </nav>
 
             <div style={styles.right}>
-              <button
-                type="button"
-                style={styles.iconBtn}
-                title="Config"
-                onClick={() => router.push("/config")}
-              >
-                ⚙️
-              </button>
-
-              <div style={{ position: "relative" }} ref={profileRef}>
+              <div style={{ position: "relative" }} ref={cfgRef}>
                 <button
                   type="button"
                   style={styles.iconBtn}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenConfig((v) => !v);
+                    setOpenProfile(false);
+                  }}
+                  title="Configuración"
+                >
+                  ⚙️
+                </button>
+                {openConfig && (
+                  <div style={styles.dropdown}>
+                    <div style={styles.ddTitle}>Configuración</div>
+                    <button style={styles.ddItem} onClick={() => router.push("/admin/users")}>Admin Usuarios</button>
+                    <div style={{ height: 8 }} />
+                    <button style={styles.ddItem} onClick={() => router.push("/admin/empresas")}>Admin Empresas</button>
+                  </div>
+                )}
+              </div>
+
+              <div style={{ position: "relative" }} ref={profRef}>
+                <button
+                  type="button"
+                  style={styles.iconBtn}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setOpenProfile((v) => !v);
+                    setOpenConfig(false);
+                  }}
                   title="Perfil"
-                  onClick={() => setOpenProfile((v) => !v)}
                 >
                   👤
                 </button>
-
                 {openProfile && (
                   <div style={styles.dropdown}>
-                    <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(15,23,42,.08)" }}>
-                      <div style={{ fontWeight: 900, fontSize: 13 }}>{me?.email || "Sin sesión"}</div>
-                      <div style={{ fontSize: 12, color: "rgba(15,23,42,.65)", marginTop: 2 }}>
-                        {me?.role ? `Rol: ${me.role}` : ""}
-                      </div>
-                    </div>
-                    <button type="button" style={styles.ddDanger} onClick={logout}>
-                      Cerrar sesión
-                    </button>
+                    <div style={styles.ddTitle}>{me?.email || "Sin sesión"}</div>
+                    <button style={styles.ddItem} onClick={logout} title="Cerrar sesión">Cerrar sesión</button>
                   </div>
                 )}
               </div>
             </div>
           </div>
-        </header>
+        </div>
 
-        <main style={styles.main}>
-          {title && (
-            <div style={{ marginBottom: 12 }}>
-              <h1 style={styles.h1}>{title}</h1>
-              <div style={styles.sub}>Panel</div>
-            </div>
-          )}
-          {children}
+        <main style={styles.container}>
+          <div style={styles.card}>
+            {title && <h1 style={styles.h1}>{title}</h1>}
+            {title && <div style={styles.sub}>Panel</div>}
+            <div style={{ marginTop: title ? 14 : 0 }}>{children}</div>
+          </div>
         </main>
       </div>
     </div>

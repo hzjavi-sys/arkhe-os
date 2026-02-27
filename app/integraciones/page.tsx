@@ -1,9 +1,5 @@
-export default function Page() {
-  return (
-    <main style={{ padding: 24, fontFamily: "system-ui" }}>
-      <h1>Integraciones</h1>
-      <p>En construcción.</p>
-      <a href="/home">← Volver a Home</a>
-    </main>
-  );
+"use client";
+import AppShell from "../../components/arkhe/AppShell";
+export default function Page(){
+  return <AppShell title="Integraciones"><div>En construcción.</div></AppShell>;
 }
