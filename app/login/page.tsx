@@ -51,7 +51,7 @@ export default function LoginPage() {
         boxShadow:"0 18px 60px rgba(2,6,23,0.10)",
         padding: 18
       }}>
-        <div style={{fontWeight:900, fontSize:22}}>ARKHE OS</div>
+        <div style={{fontWeight:900, fontSize:22}}>BEACH</div>
         <div style={{color:"#64748b", fontWeight:700, marginTop:4}}>Ingresá para continuar</div>
 
         <div style={{marginTop:14}}>

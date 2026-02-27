@@ -196,7 +196,7 @@ filter: "saturate(1.05)",
           <div style={styles.topInner}>
             <div style={styles.brand}>
               <span style={styles.dot} />
-              <span>ARKHE OS</span>
+              <span>BEACH OS</span>
             </div>
 
             <nav style={styles.nav}>
