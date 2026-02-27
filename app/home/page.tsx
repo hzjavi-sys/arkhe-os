@@ -13,7 +13,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <AppShell active="home">
+    <AppShell>
       <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
         <div style={{ fontSize: 24, fontWeight: 900 }}>Home</div>
         <div style={{ color: "#64748b", fontWeight: 800 }}>

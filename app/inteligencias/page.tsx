@@ -53,7 +53,7 @@ export default function InteligenciasPage() {
   };
 
   return (
-    <AppShell titulo="Inteligencias">
+    <AppShell title="Inteligencias">
       <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginBottom: 14 }}>
         <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>
           Profesiones ({lista.length})
