@@ -1,28 +1,31 @@
 import { NextResponse } from "next/server";
+import { getLista } from "../../../../services/inteligencias";
 
-function norm(s: string) {
-  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
+function toKey(s: string) {
+  return String(s || "").trim().toLowerCase();
 }
 
-const FALLBACK: { nombre: string; categoria?: string }[] = [
-  { nombre: "Contador público", categoria: "Empresa / Finanzas" },
-  { nombre: "Abogado", categoria: "Derecho" },
-  { nombre: "Médico", categoria: "Salud" },
-];
+function nameToSlug(nombre: string) {
+  return toKey(nombre)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // saca tildes
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-+|-+$)/g, "");
+}
 
-export async function GET(_req: Request, ctx: { params: Promise<{ slug: string }> }) {
-  const { slug } = await ctx.params;
-  const decoded = decodeURIComponent(slug || "");
+export async function GET(_: Request, { params }: { params: { slug: string } }) {
+  const s = toKey(params?.slug || "");
+  const lista = getLista();
 
-  const found = FALLBACK.find((x) => norm(x.nombre) === norm(decoded));
-  if (!found) return NextResponse.json({ ok: false, error: "not_found", slug: decoded }, { status: 404 });
+  const found =
+    // 1) slug/id exacto
+    lista.find((x: any) => toKey(x?.slug || x?.id || "") === s)
+    // 2) slug generado desde nombre (fallback)
+    || lista.find((x: any) => nameToSlug(String(x?.nombre || "")) === s)
+    // 3) nombre exacto (por si te pasan nombre por error)
+    || lista.find((x: any) => toKey(String(x?.nombre || "")) === s)
+    || null;
 
-  return NextResponse.json({
-    ok: true,
-    nombre: found.nombre,
-    categoria: found.categoria || null,
-    descripcion: `Integración lista para conectar al “Cerebro”: ${found.nombre}.`,
-    herramientas: [],
-    funciones: [],
-  });
+  if (!found) return NextResponse.json({ ok: false }, { status: 404 });
+  return NextResponse.json({ ok: true, ...found });
 }
