@@ -1,0 +1,2338 @@
+{
+  "generatedAt": "2026-03-01T19:23:25.105568Z",
+  "total": 106,
+  "items": [
+    {
+      "id": "cd-arkheos-09-experimentos-arkhe-os-exit-1",
+      "slug": "cd-arkheos-09-experimentos-arkhe-os-exit-1",
+      "nombre": "cd ~/ARKHEOS/09_Experimentos/arkhe-os || exit 1",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "f-package-json-echo-no-veo-package-json-exit-1",
+      "slug": "f-package-json-echo-no-veo-package-json-exit-1",
+      "nombre": "[ -f package.json ] || { echo \"❌ No veo package.json\"; exit 1; }",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-repo-ok-pwd",
+      "slug": "echo-repo-ok-pwd",
+      "nombre": "echo \"✅ Repo OK: $(pwd)\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ts-date-y-m-d-h-m-s",
+      "slug": "ts-date-y-m-d-h-m-s",
+      "nombre": "TS=$(date +\"%Y%m%d_%H%M%S\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "mkdir-p-backups-manual-data",
+      "slug": "mkdir-p-backups-manual-data",
+      "nombre": "mkdir -p backups/manual data",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "cp-data-profesiones-catalogo-json-backups-manual-profesiones-catalogo-ts-json-2-dev-null-true",
+      "slug": "cp-data-profesiones-catalogo-json-backups-manual-profesiones-catalogo-ts-json-2-dev-null-true",
+      "nombre": "cp data/profesiones_catalogo.json \"backups/manual/profesiones_catalogo.$TS.json\" 2>/dev/null || true",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-backup-backups-manual-profesiones-catalogo-ts-json",
+      "slug": "echo-backup-backups-manual-profesiones-catalogo-ts-json",
+      "nombre": "echo \"✅ Backup: backups/manual/profesiones_catalogo.$TS.json\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "python3-py",
+      "slug": "python3-py",
+      "nombre": "python3 - <<'PY'",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "import-re-json-unicodedata-subprocess",
+      "slug": "import-re-json-unicodedata-subprocess",
+      "nombre": "import re, json, unicodedata, subprocess",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "from-pathlib-import-path",
+      "slug": "from-pathlib-import-path",
+      "nombre": "from pathlib import Path",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "from-datetime-import-datetime",
+      "slug": "from-datetime-import-datetime",
+      "nombre": "from datetime import datetime",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raw-subprocess-check-output-pbpaste-decode-utf-8-errors-replace",
+      "slug": "raw-subprocess-check-output-pbpaste-decode-utf-8-errors-replace",
+      "nombre": "raw = subprocess.check_output([\"pbpaste\"]).decode(\"utf-8\", errors=\"replace\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raw-raw-strip",
+      "slug": "raw-raw-strip",
+      "nombre": "raw = raw.strip()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-raw",
+      "slug": "if-not-raw",
+      "nombre": "if not raw:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-portapapeles-vacio-copia-el-listado-cmd-c-y-corre-este-bloque-de-nuevo",
+      "slug": "print-portapapeles-vacio-copia-el-listado-cmd-c-y-corre-este-bloque-de-nuevo",
+      "nombre": "print(\"❌ Portapapeles vacío. Copiá el listado (Cmd+C) y corré este bloque de nuevo.\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raise-systemexit-1",
+      "slug": "raise-systemexit-1",
+      "nombre": "raise SystemExit(1)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "def-norm-s-str-str",
+      "slug": "def-norm-s-str-str",
+      "nombre": "def norm(s: str) -> str:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-s-strip-lower",
+      "slug": "s-s-strip-lower",
+      "nombre": "s = s.strip().lower()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-unicodedata-normalize-nfd-s",
+      "slug": "s-unicodedata-normalize-nfd-s",
+      "nombre": "s = unicodedata.normalize(\"NFD\", s)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-join-ch-for-ch-in-s-if-unicodedata-category-ch-mn",
+      "slug": "s-join-ch-for-ch-in-s-if-unicodedata-category-ch-mn",
+      "nombre": "s = \"\".join(ch for ch in s if unicodedata.category(ch) != \"Mn\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-re-sub-r-s-s",
+      "slug": "s-re-sub-r-s-s",
+      "nombre": "s = re.sub(r\"\\s+\", \" \", s)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-s",
+      "slug": "return-s",
+      "nombre": "return s",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "def-slugify-s-str-str",
+      "slug": "def-slugify-s-str-str",
+      "nombre": "def slugify(s: str) -> str:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-norm-s",
+      "slug": "s-norm-s",
+      "nombre": "s = norm(s)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-re-sub-r-a-z0-9-s-strip",
+      "slug": "s-re-sub-r-a-z0-9-s-strip",
+      "nombre": "s = re.sub(r\"[^a-z0-9]+\", \"-\", s).strip(\"-\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-s-or-item",
+      "slug": "return-s-or-item",
+      "nombre": "return s or \"item\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "quitamos-ruido-obvio-de-fuentes-web-contadores-etc-esto-no-son-profesiones",
+      "slug": "quitamos-ruido-obvio-de-fuentes-web-contadores-etc-esto-no-son-profesiones",
+      "nombre": "# Quitamos ruido obvio de fuentes web, contadores, etc. (esto NO son profesiones)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "noise-contains",
+      "slug": "noise-contains",
+      "nombre": "noise_contains = [",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "item",
+      "slug": "item",
+      "nombre": "]",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "noise-prefix",
+      "slug": "noise-prefix",
+      "nombre": "noise_prefix = [",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "1-ciencias-2-ingenier-3-ciencias-sociales-4-artes",
+      "slug": "1-ciencias-2-ingenier-3-ciencias-sociales-4-artes",
+      "nombre": "\"1. ciencias\", \"2. ingenier\", \"3. ciencias sociales\", \"4. artes\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "5-ciencias-exactas-6-oficios-esta-lista-de-profesiones",
+      "slug": "5-ciencias-exactas-6-oficios-esta-lista-de-profesiones",
+      "nombre": "\"5. ciencias exactas\", \"6. oficios\", \"*esta\", \"lista de profesiones\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lines",
+      "slug": "lines",
+      "nombre": "lines = []",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-ln-in-raw-splitlines",
+      "slug": "for-ln-in-raw-splitlines",
+      "nombre": "for ln in raw.splitlines():",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ln-ln-strip",
+      "slug": "ln-ln-strip",
+      "nombre": "ln = ln.strip()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-ln",
+      "slug": "if-not-ln",
+      "nombre": "if not ln:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "continue",
+      "slug": "continue",
+      "nombre": "continue",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "low-norm-ln",
+      "slug": "low-norm-ln",
+      "nombre": "low = norm(ln)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "descartar-encabezados-y-fuentes",
+      "slug": "descartar-encabezados-y-fuentes",
+      "nombre": "# descartar encabezados y fuentes",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-low-startswith-p-for-p-in-noise-prefix",
+      "slug": "if-any-low-startswith-p-for-p-in-noise-prefix",
+      "nombre": "if any(low.startswith(p) for p in noise_prefix):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-x-in-low-for-x-in-noise-contains",
+      "slug": "if-any-x-in-low-for-x-in-noise-contains",
+      "nombre": "if any(x in low for x in noise_contains):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "descartar-a-a-b-c-letras-sueltas",
+      "slug": "descartar-a-a-b-c-letras-sueltas",
+      "nombre": "# descartar “A A”, “B C”, letras sueltas",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-re-fullmatch-r-a-z-s-a-z-low",
+      "slug": "if-re-fullmatch-r-a-z-s-a-z-low",
+      "nombre": "if re.fullmatch(r\"[a-z]\\s*[a-z]?\", low):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "sacar-numeracion-tipo-12",
+      "slug": "sacar-numeracion-tipo-12",
+      "nombre": "# sacar numeración tipo \"12.\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ln-re-sub-r-d-s-ln-strip",
+      "slug": "ln-re-sub-r-d-s-ln-strip",
+      "nombre": "ln = re.sub(r\"^\\d+\\.\\s*\", \"\", ln).strip()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "split-por-doble-espacio-cuando-vienen-2-profesiones-en-la-misma-linea",
+      "slug": "split-por-doble-espacio-cuando-vienen-2-profesiones-en-la-misma-linea",
+      "nombre": "# split por doble espacio (cuando vienen 2 profesiones en la misma línea)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "parts-re-split-r-s-2-ln",
+      "slug": "parts-re-split-r-s-2-ln",
+      "nombre": "parts = re.split(r\"\\s{2,}\", ln)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-p-in-parts",
+      "slug": "for-p-in-parts",
+      "nombre": "for p in parts:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "p-p-strip",
+      "slug": "p-p-strip",
+      "nombre": "p = p.strip()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-p",
+      "slug": "if-not-p",
+      "nombre": "if not p:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lp-norm-p",
+      "slug": "lp-norm-p",
+      "nombre": "lp = norm(p)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-lp-startswith-pr-for-pr-in-noise-prefix",
+      "slug": "if-any-lp-startswith-pr-for-pr-in-noise-prefix",
+      "nombre": "if any(lp.startswith(pr) for pr in noise_prefix):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-x-in-lp-for-x-in-noise-contains",
+      "slug": "if-any-x-in-lp-for-x-in-noise-contains",
+      "nombre": "if any(x in lp for x in noise_contains):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-re-fullmatch-r-a-z-s-a-z-lp",
+      "slug": "if-re-fullmatch-r-a-z-s-a-z-lp",
+      "nombre": "if re.fullmatch(r\"[a-z]\\s*[a-z]?\", lp):",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lines-append-p",
+      "slug": "lines-append-p",
+      "nombre": "lines.append(p)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "extras-de-plataformas-como-pediste",
+      "slug": "extras-de-plataformas-como-pediste",
+      "nombre": "# Extras de plataformas (como pediste)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "extras",
+      "slug": "extras",
+      "nombre": "extras = [",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-windows-arquitecto-de-windows-desarrollador-de-windows-empleado-de-windows",
+      "slug": "ingeniero-de-windows-arquitecto-de-windows-desarrollador-de-windows-empleado-de-windows",
+      "nombre": "\"Ingeniero de Windows\",\"Arquitecto de Windows\",\"Desarrollador de Windows\",\"Empleado de Windows\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-apple-arquitecto-de-apple-desarrollador-de-apple-disenador-de-apple-empleado-de-apple",
+      "slug": "ingeniero-de-apple-arquitecto-de-apple-desarrollador-de-apple-disenador-de-apple-empleado-de-apple",
+      "nombre": "\"Ingeniero de Apple\",\"Arquitecto de Apple\",\"Desarrollador de Apple\",\"Diseñador de Apple\",\"Empleado de Apple\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-meta-arquitecto-de-meta-desarrollador-de-meta-usuario-experto-en-meta-profesional-en-estructura-de-meta",
+      "slug": "ingeniero-de-meta-arquitecto-de-meta-desarrollador-de-meta-usuario-experto-en-meta-profesional-en-estructura-de-meta",
+      "nombre": "\"Ingeniero de Meta\",\"Arquitecto de Meta\",\"Desarrollador de Meta\",\"Usuario experto en Meta\",\"Profesional en estructura de Meta\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lines-extend-extras",
+      "slug": "lines-extend-extras",
+      "nombre": "lines.extend(extras)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "dedupe-exacto-sin-ser-agresivos",
+      "slug": "dedupe-exacto-sin-ser-agresivos",
+      "nombre": "# Dedupe exacto (sin ser agresivos)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "seen-set",
+      "slug": "seen-set",
+      "nombre": "seen = set()",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items",
+      "slug": "items",
+      "nombre": "items = []",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-nombre-in-lines",
+      "slug": "for-nombre-in-lines",
+      "nombre": "for nombre in lines:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "k-norm-nombre",
+      "slug": "k-norm-nombre",
+      "nombre": "k = norm(nombre)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-k-or-k-in-seen",
+      "slug": "if-not-k-or-k-in-seen",
+      "nombre": "if not k or k in seen:",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "seen-add-k",
+      "slug": "seen-add-k",
+      "nombre": "seen.add(k)",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items-append",
+      "slug": "items-append",
+      "nombre": "items.append({",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "id-slugify-nombre",
+      "slug": "id-slugify-nombre",
+      "nombre": "\"id\": slugify(nombre),",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "slug-slugify-nombre",
+      "slug": "slug-slugify-nombre",
+      "nombre": "\"slug\": slugify(nombre),",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "nombre-nombre-strip",
+      "slug": "nombre-nombre-strip",
+      "nombre": "\"nombre\": nombre.strip(),",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "categoria",
+      "slug": "categoria",
+      "nombre": "\"categoria\": \"\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "descripcion",
+      "slug": "descripcion",
+      "nombre": "\"descripcion\": \"\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-diagnostico-planificacion-ejecucion-control-optimizacion",
+      "slug": "funciones-diagnostico-planificacion-ejecucion-control-optimizacion",
+      "nombre": "\"funciones\": [\"Diagnóstico\",\"Planificación\",\"Ejecución\",\"Control\",\"Optimización\"],",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-plantillas-tablero-registro-seguimiento",
+      "slug": "herramientas-checklist-plantillas-tablero-registro-seguimiento",
+      "nombre": "\"herramientas\": [\"Checklist\",\"Plantillas\",\"Tablero\",\"Registro\",\"Seguimiento\"],",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tags",
+      "slug": "tags",
+      "nombre": "\"tags\": []",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "item",
+      "slug": "item",
+      "nombre": "})",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "out",
+      "slug": "out",
+      "nombre": "out = {",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "generatedat-datetime-utcnow-isoformat-z",
+      "slug": "generatedat-datetime-utcnow-isoformat-z",
+      "nombre": "\"generatedAt\": datetime.utcnow().isoformat()+\"Z\",",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "total-len-items",
+      "slug": "total-len-items",
+      "nombre": "\"total\": len(items),",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items-items",
+      "slug": "items-items",
+      "nombre": "\"items\": items",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "item",
+      "slug": "item",
+      "nombre": "}",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "path-data-profesiones-catalogo-json-write-text-json-dumps-out-ensure-ascii-false-indent-2-encoding-utf-8",
+      "slug": "path-data-profesiones-catalogo-json-write-text-json-dumps-out-ensure-ascii-false-indent-2-encoding-utf-8",
+      "nombre": "Path(\"data/profesiones_catalogo.json\").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding=\"utf-8\")",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-catalogo-generado-total-len-items",
+      "slug": "print-catalogo-generado-total-len-items",
+      "nombre": "print(\"✅ CATALOGO GENERADO. TOTAL =\", len(items))",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-ejemplos-x-nombre-for-x-in-items-10",
+      "slug": "print-ejemplos-x-nombre-for-x-in-items-10",
+      "nombre": "print(\"✅ EJEMPLOS =\", [x[\"nombre\"] for x in items[:10]])",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo",
+      "slug": "echo",
+      "nombre": "echo",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-reiniciar-servidor-servidor",
+      "slug": "echo-reiniciar-servidor-servidor",
+      "nombre": "echo \"🔴 REINICIAR SERVIDOR (SERVIDOR):\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-ctrl-c",
+      "slug": "echo-ctrl-c",
+      "nombre": "echo \"Ctrl+C\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-cd-arkheos-09-experimentos-arkhe-os",
+      "slug": "echo-cd-arkheos-09-experimentos-arkhe-os",
+      "nombre": "echo \"cd ~/ARKHEOS/09_Experimentos/arkhe-os\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-rm-rf-next",
+      "slug": "echo-rm-rf-next",
+      "nombre": "echo \"rm -rf .next\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-port-3000-npm-run-dev",
+      "slug": "echo-port-3000-npm-run-dev",
+      "nombre": "echo \"PORT=3000 npm run dev\"",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-windows",
+      "slug": "ingeniero-de-windows",
+      "nombre": "Ingeniero de Windows",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "arquitecto-de-windows",
+      "slug": "arquitecto-de-windows",
+      "nombre": "Arquitecto de Windows",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "desarrollador-de-windows",
+      "slug": "desarrollador-de-windows",
+      "nombre": "Desarrollador de Windows",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "empleado-de-windows",
+      "slug": "empleado-de-windows",
+      "nombre": "Empleado de Windows",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-apple",
+      "slug": "ingeniero-de-apple",
+      "nombre": "Ingeniero de Apple",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "arquitecto-de-apple",
+      "slug": "arquitecto-de-apple",
+      "nombre": "Arquitecto de Apple",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "desarrollador-de-apple",
+      "slug": "desarrollador-de-apple",
+      "nombre": "Desarrollador de Apple",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "disenador-de-apple",
+      "slug": "disenador-de-apple",
+      "nombre": "Diseñador de Apple",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "empleado-de-apple",
+      "slug": "empleado-de-apple",
+      "nombre": "Empleado de Apple",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-meta",
+      "slug": "ingeniero-de-meta",
+      "nombre": "Ingeniero de Meta",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "arquitecto-de-meta",
+      "slug": "arquitecto-de-meta",
+      "nombre": "Arquitecto de Meta",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "desarrollador-de-meta",
+      "slug": "desarrollador-de-meta",
+      "nombre": "Desarrollador de Meta",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "usuario-experto-en-meta",
+      "slug": "usuario-experto-en-meta",
+      "nombre": "Usuario experto en Meta",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    },
+    {
+      "id": "profesional-en-estructura-de-meta",
+      "slug": "profesional-en-estructura-de-meta",
+      "nombre": "Profesional en estructura de Meta",
+      "categoria": "",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Planificación",
+        "Ejecución",
+        "Control",
+        "Optimización"
+      ],
+      "herramientas": [
+        "Checklist",
+        "Plantillas",
+        "Tablero",
+        "Registro",
+        "Seguimiento"
+      ],
+      "tags": []
+    }
+  ]
+}
