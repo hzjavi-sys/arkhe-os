@@ -1,0 +1,26 @@
+{
+  "generatedAt": "manual",
+  "total": 2,
+  "items": [
+    {
+      "id": "abogado",
+      "slug": "abogado",
+      "nombre": "Abogado",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "Asesora y redacta documentación legal.",
+      "funciones": ["Diagnóstico", "Estrategia", "Documentación", "Plazos", "Riesgos"],
+      "herramientas": ["Plantillas", "Checklist", "Matriz riesgos", "Vencimientos", "Tablero"],
+      "tags": ["Derecho"]
+    },
+    {
+      "id": "contador",
+      "slug": "contador",
+      "nombre": "Contador/Contable",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "Organiza contabilidad, impuestos y reportes.",
+      "funciones": ["Diagnóstico", "Plan contable", "Impuestos", "Reportes", "Control"],
+      "herramientas": ["Plantillas", "Checklist", "Tablero", "Calendario", "Conciliación"],
+      "tags": ["Finanzas"]
+    }
+  ]
+}
