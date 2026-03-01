@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-03-01T18:52:45.627276Z",
+  "total": 1,
+  "items": [
+    {
+      "id": "pega-aqui-todo-tu-listado-completo",
+      "slug": "pega-aqui-todo-tu-listado-completo",
+      "nombre": "PEGA_AQUI_TODO_TU_LISTADO_COMPLETO",
+      "categoria": "General",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico profesional",
+        "Planificación estratégica",
+        "Ejecución técnica",
+        "Optimización",
+        "Documentación"
+      ],
+      "herramientas": [
+        "Checklist profesional",
+        "Plantillas base",
+        "Matriz de control",
+        "Tablero de seguimiento",
+        "Guía técnica"
+      ],
+      "tags": []
+    }
+  ]
+}
