@@ -4,13 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import AppShell from "../../components/arkhe/AppShell";
 import InteligenciasTabs from "../../components/arkhe/InteligenciasTabs";
 
-type Item = {
-  id: string;
-  slug: string;
-  nombre: string;
-  categoria?: string;
-  tags?: string[];
-};
+type Item = { id: string; slug: string; nombre: string; categoria?: string; tags?: string[] };
 
 type Detalle = {
   ok: boolean;
@@ -56,8 +50,9 @@ export default function InteligenciasPage() {
     setLoading(true);
     setDetalle(null);
     try {
-      const slug = encodeURIComponent(p.slug || p.id);
-      const r = await fetch(`/api/inteligencias/slug/${slug}`, { cache: "no-store" });
+      // ✅ usamos ?nombre= porque es lo más robusto (tildes/espacios)
+      const url = `/api/inteligencias?nombre=${encodeURIComponent(p.nombre)}`;
+      const r = await fetch(url, { cache: "no-store" });
       const j = await r.json();
       setDetalle(j);
     } catch {
@@ -118,18 +113,10 @@ export default function InteligenciasPage() {
         ))}
       </div>
 
-      {/* Panel detalle */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(2,6,23,0.35)",
-            display: "flex",
-            justifyContent: "flex-end",
-            zIndex: 200,
-          }}
+          style={{ position: "fixed", inset: 0, background: "rgba(2,6,23,0.35)", display: "flex", justifyContent: "flex-end", zIndex: 200 }}
         >
           <div
             onClick={(e) => e.stopPropagation()}
@@ -148,14 +135,7 @@ export default function InteligenciasPage() {
               <div style={{ fontWeight: 950, fontSize: 18 }}>Detalle</div>
               <button
                 onClick={() => setOpen(false)}
-                style={{
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "rgba(255,255,255,0.9)",
-                  fontWeight: 900,
-                  cursor: "pointer",
-                }}
+                style={{ padding: "10px 12px", borderRadius: 12, border: "1px solid rgba(0,0,0,0.12)", background: "rgba(255,255,255,0.9)", fontWeight: 900, cursor: "pointer" }}
               >
                 Cerrar
               </button>
@@ -169,9 +149,6 @@ export default function InteligenciasPage() {
                 <div style={{ marginTop: 6, color: "#475569", fontWeight: 800 }}>
                   Categoría: <b>{detalle.categoria || "—"}</b>
                 </div>
-                {detalle.descripcion ? (
-                  <div style={{ marginTop: 12, lineHeight: 1.5 }}>{detalle.descripcion}</div>
-                ) : null}
 
                 <div style={{ marginTop: 16, fontWeight: 950 }}>Funciones</div>
                 <div style={{ marginTop: 8 }}>
