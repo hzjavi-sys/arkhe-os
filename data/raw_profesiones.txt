@@ -1,0 +1,67 @@
+python3 - <<'PY'
+import json, re, unicodedata
+from pathlib import Path
+from datetime import datetime
+
+RAW = Path("data/raw_profesiones.txt")
+OUT = Path("data/profesiones_catalogo.json")
+
+raw = RAW.read_text(encoding="utf-8", errors="ignore")
+
+def normalize(s):
+    s = s.strip()
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(c for c in s if unicodedata.category(c) != "Mn")
+    return s.strip()
+
+def slugify(s):
+    s = normalize(s).lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s)
+    return s.strip("-")
+
+lines = []
+for line in raw.splitlines():
+    line = line.strip()
+    if not line:
+        continue
+    if "LISTA DE PROFESIONES" in line.upper():
+        continue
+    if re.fullmatch(r"[A-Z]\s+[A-Z]", line):
+        continue
+    if re.fullmatch(r"[A-Z]", line):
+        continue
+    lines.append(line)
+
+seen = set()
+clean = []
+for l in lines:
+    key = normalize(l).lower()
+    if key not in seen:
+        seen.add(key)
+        clean.append(l.strip())
+
+items = []
+for name in clean:
+    items.append({
+        "id": slugify(name),
+        "slug": slugify(name),
+        "nombre": name,
+        "categoria": "",
+        "descripcion": "",
+        "funciones": [],
+        "herramientas": [],
+        "tags": []
+    })
+
+out = {
+    "generatedAt": datetime.utcnow().isoformat() + "Z",
+    "total": len(items),
+    "items": items
+}
+
+OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+
+print("======================================")
+print("TOTAL PROFESIONES GENERADAS:", len(items))
+print("======================================")
+PY
