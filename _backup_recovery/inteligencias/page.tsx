@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import AppShell from "../../components/arkhe/AppShell";
-import InteligenciasTabs from "../../components/arkhe/InteligenciasTabs";
 
 type Item = {
   id: string;
@@ -12,19 +10,14 @@ type Item = {
   tags?: string[];
 };
 
-type Detalle = {
-  ok: boolean;
-  id?: string;
-  slug?: string;
-  nombre: string;
-  categoria?: string;
+type Detalle = Item & {
+  ok?: boolean;
   descripcion?: string;
   funciones?: string[];
   herramientas?: string[];
-  tags?: string[];
 };
 
-export default function InteligenciasPage() {
+export default function InteligenciasProfesiones() {
   const [q, setQ] = useState("");
   const [items, setItems] = useState<Item[]>([]);
   const [open, setOpen] = useState(false);
@@ -36,10 +29,9 @@ export default function InteligenciasPage() {
       try {
         const r = await fetch("/api/inteligencias", { cache: "no-store" });
         const j = await r.json();
-        const list: any[] = Array.isArray(j) ? j : (Array.isArray(j?.items) ? j.items : []);
-        setItems(list as Item[]);
-      } catch (e) {
-        console.error("LOAD_INTELIGENCIAS_ERROR", e);
+        const arr: Item[] = Array.isArray(j) ? j : Array.isArray(j?.items) ? j.items : [];
+        setItems(arr);
+      } catch {
         setItems([]);
       }
     })();
@@ -56,22 +48,21 @@ export default function InteligenciasPage() {
     setLoading(true);
     setDetalle(null);
     try {
-      const slug = encodeURIComponent(p.slug || p.id);
-      const r = await fetch(`/api/inteligencias/slug/${slug}`, { cache: "no-store" });
+      const r = await fetch(`/api/inteligencias/slug/${encodeURIComponent(p.slug || p.id)}`, { cache: "no-store" });
       const j = await r.json();
       setDetalle(j);
     } catch {
-      setDetalle({ ok: false, nombre: p.nombre, descripcion: "Error de red." });
+      setDetalle({ ok: false, ...p } as any);
     } finally {
       setLoading(false);
     }
   }
 
-  const cardStyle: React.CSSProperties = {
+  const card: React.CSSProperties = {
     borderRadius: 14,
     padding: 14,
-    background: "rgba(255,255,255,0.90)",
-    border: "1px solid rgba(15,23,42,0.10)",
+    background: "rgba(255,255,255,0.92)",
+    border: "1px solid rgba(15,23,42,0.12)",
     boxShadow: "0 10px 30px rgba(2,6,23,0.10)",
     color: "#0f172a",
     cursor: "pointer",
@@ -79,14 +70,9 @@ export default function InteligenciasPage() {
   };
 
   return (
-    <AppShell title="Inteligencias">
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        <div style={{ fontSize: 18, fontWeight: 950, color: "#0f172a" }}>Panel</div>
-        <InteligenciasTabs active="profesiones" />
-      </div>
-
-      <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginTop: 14 }}>
-        <div style={{ fontSize: 18, fontWeight: 950, color: "#0f172a" }}>
+    <div>
+      <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", marginBottom: 14 }}>
+        <div style={{ fontSize: 20, fontWeight: 900, color: "#0f172a" }}>
           Profesiones ({filtradas.length})
         </div>
 
@@ -100,25 +86,24 @@ export default function InteligenciasPage() {
             padding: "10px 12px",
             borderRadius: 12,
             border: "1px solid rgba(15,23,42,0.15)",
-            background: "rgba(255,255,255,0.95)",
+            background: "rgba(255,255,255,0.85)",
             outline: "none",
             fontWeight: 700,
           }}
         />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(260px, 1fr))", gap: 12, marginTop: 12 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(260px, 1fr))", gap: 12 }}>
         {filtradas.map((p) => (
-          <div key={p.id} style={cardStyle} onClick={() => abrir(p)}>
+          <div key={p.id} style={card} onClick={() => abrir(p)}>
             <div style={{ fontWeight: 950 }}>{p.nombre}</div>
-            <div style={{ marginTop: 6, color: "#334155", fontWeight: 800, fontSize: 13 }}>
-              {p.categoria || "Varios"}
+            <div style={{ marginTop: 6, color: "#334155", fontWeight: 700, fontSize: 13 }}>
+              {p.categoria || "—"}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Panel detalle */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -134,14 +119,15 @@ export default function InteligenciasPage() {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              width: 520,
+              width: 560,
               maxWidth: "92vw",
               height: "100vh",
               background: "rgba(255,255,255,0.96)",
-              borderLeft: "1px solid rgba(0,0,0,0.10)",
+              color: "#0f172a",
+              borderLeft: "1px solid rgba(15,23,42,0.12)",
               padding: 18,
               overflow: "auto",
-              color: "#0f172a",
+              boxShadow: "-20px 0 60px rgba(2,6,23,0.18)",
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -151,7 +137,7 @@ export default function InteligenciasPage() {
                 style={{
                   padding: "10px 12px",
                   borderRadius: 12,
-                  border: "1px solid rgba(0,0,0,0.12)",
+                  border: "1px solid rgba(15,23,42,0.18)",
                   background: "rgba(255,255,255,0.9)",
                   fontWeight: 900,
                   cursor: "pointer",
@@ -163,20 +149,27 @@ export default function InteligenciasPage() {
 
             {loading && <div style={{ marginTop: 14 }}>Cargando…</div>}
 
-            {!loading && detalle?.ok && (
+            {!loading && detalle && detalle.ok === false && (
+              <div style={{ marginTop: 14, color: "#b91c1c", fontWeight: 900 }}>
+                Error: no encontrado o error de red.
+              </div>
+            )}
+
+            {!loading && detalle && detalle.ok !== false && (
               <>
                 <div style={{ marginTop: 14, fontSize: 22, fontWeight: 950 }}>{detalle.nombre}</div>
-                <div style={{ marginTop: 6, color: "#475569", fontWeight: 800 }}>
+                <div style={{ marginTop: 6, color: "#334155", fontWeight: 800 }}>
                   Categoría: <b>{detalle.categoria || "—"}</b>
                 </div>
+
                 {detalle.descripcion ? (
-                  <div style={{ marginTop: 12, lineHeight: 1.5 }}>{detalle.descripcion}</div>
+                  <div style={{ marginTop: 12, lineHeight: 1.4 }}>{detalle.descripcion}</div>
                 ) : null}
 
                 <div style={{ marginTop: 16, fontWeight: 950 }}>Funciones</div>
                 <div style={{ marginTop: 8 }}>
                   {(detalle.funciones || []).length === 0 ? (
-                    <div style={{ color: "#64748b" }}>Todavía vacío.</div>
+                    <div style={{ color: "#475569" }}>Todavía vacío.</div>
                   ) : (
                     (detalle.funciones || []).map((f) => (
                       <div key={f} style={{ padding: "6px 0", fontWeight: 800 }}>{f}</div>
@@ -187,7 +180,7 @@ export default function InteligenciasPage() {
                 <div style={{ marginTop: 16, fontWeight: 950 }}>Herramientas</div>
                 <div style={{ marginTop: 8 }}>
                   {(detalle.herramientas || []).length === 0 ? (
-                    <div style={{ color: "#64748b" }}>Todavía vacío.</div>
+                    <div style={{ color: "#475569" }}>Todavía vacío.</div>
                   ) : (
                     (detalle.herramientas || []).map((h) => (
                       <div key={h} style={{ padding: "6px 0", fontWeight: 800 }}>{h}</div>
@@ -196,15 +189,9 @@ export default function InteligenciasPage() {
                 </div>
               </>
             )}
-
-            {!loading && detalle && !detalle.ok && (
-              <div style={{ marginTop: 14, color: "#b91c1c", fontWeight: 900 }}>
-                Error: no encontrado o error de red.
-              </div>
-            )}
           </div>
         </div>
       )}
-    </AppShell>
+    </div>
   );
 }

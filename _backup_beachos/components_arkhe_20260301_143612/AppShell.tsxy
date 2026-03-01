@@ -1,0 +1,196 @@
+"use client";
+
+import React from "react";
+import "./theme.css";
+
+type Props = {
+  title?: string;
+  userEmail?: string;
+  children: React.ReactNode;
+  onLogout?: () => void;
+};
+
+export default function AppShell({ title = "ARKHE OS", userEmail, children, onLogout }: Props) {
+  const [openConfig, setOpenConfig] = React.useState(false);
+  const [openUser, setOpenUser] = React.useState(false);
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        fontSize: "calc(var(--font) * 1.2)",
+        color: "var(--text)",
+        background:
+          "radial-gradient(900px 600px at 20% 15%, rgba(37,99,235,.10), transparent 55%)," +
+          "radial-gradient(900px 600px at 80% 25%, rgba(99,102,241,.10), transparent 60%)," +
+          "linear-gradient(180deg, var(--bg0), #ffffff)",
+        backgroundSize: "140% 140%",
+        animation: "floaty 18s ease-in-out infinite",
+      }}
+      onClick={() => {
+        setOpenConfig(false);
+        setOpenUser(false);
+      }}
+    >
+      {/* Top bar horizontal */}
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          background: "rgba(255,255,255,.75)",
+          backdropFilter: "blur(10px)",
+          borderBottom: "1px solid var(--line)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: "0 auto",
+            padding: "14px 18px",
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+          }}
+        >
+          <div style={{ fontWeight: 900, letterSpacing: 0.5 }}>{title}</div>
+
+          {/* Menús horizontales (base) */}
+          <div style={{ display: "flex", gap: 10, marginLeft: 10, flexWrap: "wrap" }}>
+            <a href="/" style={linkStyle}>Operación ▾</a>
+            <a href="#" style={linkStyle}>Inteligencias ▾</a>
+            <a href="#" style={linkStyle}>Integraciones ▾</a>
+          </div>
+
+          <div style={{ flex: 1 }} />
+
+          {/* Iconos derecha */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ position: "relative" }}>
+              <button
+                type="button"
+                onClick={(e) => { e.stopPropagation(); setOpenConfig((v) => !v); setOpenUser(false); }}
+                style={iconBtnStyle}
+                title="Configuración"
+              >
+                ⚙️
+              </button>
+              {openConfig && (
+                <div style={menuStyle} onClick={(e) => e.stopPropagation()}>
+                  <a href="/admin/users" style={menuItemStyle}>Usuarios (admin)</a>
+                  <a href="/admin/empresas" style={menuItemStyle}>Empresas</a>
+                </div>
+              )}
+            </div>
+
+            <div style={{ position: "relative" }}>
+              <button
+                type="button"
+                onClick={(e) => { e.stopPropagation(); setOpenUser((v) => !v); setOpenConfig(false); }}
+                style={iconBtnStyle}
+                title="Perfil"
+              >
+                👤
+              </button>
+              {openUser && (
+                <div style={menuStyle} onClick={(e) => e.stopPropagation()}>
+                  <div style={{ padding: "10px 12px", color: "var(--muted)", fontSize: 14 }}>
+                    {userEmail || "Sin sesión"}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onLogout?.()}
+                    style={{
+                      width: "100%",
+                      textAlign: "left",
+                      border: "none",
+                      background: "transparent",
+                      padding: "10px 12px",
+                      cursor: "pointer",
+                      color: "var(--danger)",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Cerrar sesión
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "22px 18px" }}>
+        <div
+          style={{
+            background: "var(--card)",
+            border: "1px solid var(--line)",
+            borderRadius: 16,
+            boxShadow: "var(--shadow)",
+            padding: 18,
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const linkStyle: React.CSSProperties = {
+  color: "var(--text)",
+  textDecoration: "none",
+  fontWeight: 700,
+  fontSize: 14,
+  padding: "8px 10px",
+  borderRadius: 10,
+};
+
+const iconBtnStyle: React.CSSProperties = {
+  width: 38,
+  height: 38,
+  borderRadius: 12,
+  border: "1px solid var(--line)",
+  background: "var(--card)",
+  cursor: "pointer",
+  boxShadow: "0 6px 16px rgba(15,23,42,.08)",
+};
+
+const menuStyle: React.CSSProperties = {
+  position: "absolute",
+  right: 0,
+  top: 44,
+  width: 220,
+  background: "var(--card)",
+  border: "1px solid var(--line)",
+  borderRadius: 14,
+  boxShadow: "var(--shadow)",
+  overflow: "hidden",
+};
+
+const menuItemStyle: React.CSSProperties = {
+  display: "block",
+  padding: "10px 12px",
+  color: "var(--text)",
+  textDecoration: "none",
+  fontWeight: 700,
+  fontSize: 14,
+<div style={{
+  minHeight: "100vh",
+  ...
+}}>
+<div
+  style={{
+    minHeight: "100vh",
+    backgroundImage:
+      "linear-gradient(120deg, rgba(255,120,0,0.9), rgba(40,20,60,0.95)), url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    color: "#111",
+  }}
+>
+≈
+øo
+};
