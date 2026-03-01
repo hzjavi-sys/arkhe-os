@@ -1,0 +1,3902 @@
+{
+  "generatedAt": "2026-03-01T18:40:48.994139Z",
+  "total": 175,
+  "items": [
+    {
+      "id": "cd-arkheos-09-experimentos-arkhe-os-echo-no-estoy-en-el-repo-exit-1",
+      "slug": "cd-arkheos-09-experimentos-arkhe-os-echo-no-estoy-en-el-repo-exit-1",
+      "nombre": "cd ~/ARKHEOS/09_Experimentos/arkhe-os || { echo \"❌ No estoy en el repo\"; exit 1; }",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "f-package-json-echo-no-veo-package-json-aca-estas-en-la-carpeta-incorrecta-exit-1",
+      "slug": "f-package-json-echo-no-veo-package-json-aca-estas-en-la-carpeta-incorrecta-exit-1",
+      "nombre": "[ -f package.json ] || { echo \"❌ No veo package.json acá. Estás en la carpeta incorrecta.\"; exit 1; }",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-carpeta-ok-pwd",
+      "slug": "echo-carpeta-ok-pwd",
+      "nombre": "echo \"✅ Carpeta OK: $(pwd)\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "carpeta-backups-no-pisa-anteriores",
+      "slug": "carpeta-backups-no-pisa-anteriores",
+      "nombre": "# Carpeta backups (no pisa anteriores)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ts-date-y-m-d-h-m-s",
+      "slug": "ts-date-y-m-d-h-m-s",
+      "nombre": "TS=\"$(date +%Y%m%d_%H%M%S)\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "mkdir-p-backups-autobackup-data",
+      "slug": "mkdir-p-backups-autobackup-data",
+      "nombre": "mkdir -p backups/autobackup data",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "backup-del-catalogo-actual-si-existe",
+      "slug": "backup-del-catalogo-actual-si-existe",
+      "nombre": "# Backup del catálogo actual si existe",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-f-data-profesiones-catalogo-json-then",
+      "slug": "if-f-data-profesiones-catalogo-json-then",
+      "nombre": "if [ -f \"data/profesiones_catalogo.json\" ]; then",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "cp-data-profesiones-catalogo-json-backups-autobackup-profesiones-catalogo-ts-json",
+      "slug": "cp-data-profesiones-catalogo-json-backups-autobackup-profesiones-catalogo-ts-json",
+      "nombre": "cp \"data/profesiones_catalogo.json\" \"backups/autobackup/profesiones_catalogo.$TS.json\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-backup-creado-backups-autobackup-profesiones-catalogo-ts-json",
+      "slug": "echo-backup-creado-backups-autobackup-profesiones-catalogo-ts-json",
+      "nombre": "echo \"✅ Backup creado: backups/autobackup/profesiones_catalogo.$TS.json\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "else",
+      "slug": "else",
+      "nombre": "else",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-no-existe-data-profesiones-catalogo-json-todavia-ok",
+      "slug": "echo-no-existe-data-profesiones-catalogo-json-todavia-ok",
+      "nombre": "echo \"ℹ️ No existe data/profesiones_catalogo.json todavía (ok)\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "fi",
+      "slug": "fi",
+      "nombre": "fi",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo",
+      "slug": "echo",
+      "nombre": "echo",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo",
+      "slug": "echo",
+      "nombre": "echo \"==============================\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-importar-desde-portapapeles",
+      "slug": "echo-importar-desde-portapapeles",
+      "nombre": "echo \"📌 IMPORTAR DESDE PORTAPAPELES\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-copiaste-la-lista-cmd-c",
+      "slug": "echo-copiaste-la-lista-cmd-c",
+      "nombre": "echo \"✅ COPIASTE la lista? (Cmd+C)\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-ahora-voy-a-leer-el-portapapeles",
+      "slug": "echo-ahora-voy-a-leer-el-portapapeles",
+      "nombre": "echo \"➡️ Ahora voy a leer el portapapeles...\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "python3-py",
+      "slug": "python3-py",
+      "nombre": "python3 - <<'PY'",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "import-re-json-unicodedata",
+      "slug": "import-re-json-unicodedata",
+      "nombre": "import re, json, unicodedata",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "from-pathlib-import-path",
+      "slug": "from-pathlib-import-path",
+      "nombre": "from pathlib import Path",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "from-datetime-import-datetime",
+      "slug": "from-datetime-import-datetime",
+      "nombre": "from datetime import datetime",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "import-subprocess",
+      "slug": "import-subprocess",
+      "nombre": "import subprocess",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "leer-portapapeles",
+      "slug": "leer-portapapeles",
+      "nombre": "# --- leer portapapeles ---",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raw-subprocess-check-output-pbpaste-decode-utf-8-errors-replace",
+      "slug": "raw-subprocess-check-output-pbpaste-decode-utf-8-errors-replace",
+      "nombre": "raw = subprocess.check_output([\"pbpaste\"]).decode(\"utf-8\", errors=\"replace\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raw-raw-strip",
+      "slug": "raw-raw-strip",
+      "nombre": "raw = raw.strip()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-raw",
+      "slug": "if-not-raw",
+      "nombre": "if not raw:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-portapapeles-vacio-copia-la-lista-cmd-c-y-volve-a-correr-el-bloque",
+      "slug": "print-portapapeles-vacio-copia-la-lista-cmd-c-y-volve-a-correr-el-bloque",
+      "nombre": "print(\"❌ Portapapeles vacío. Copiá la lista (Cmd+C) y volvé a correr el bloque.\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "raise-systemexit-1",
+      "slug": "raise-systemexit-1",
+      "nombre": "raise SystemExit(1)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "def-norm-key-s-str-str",
+      "slug": "def-norm-key-s-str-str",
+      "nombre": "def norm_key(s: str) -> str:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-s-strip-lower",
+      "slug": "s-s-strip-lower",
+      "nombre": "s = s.strip().lower()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-unicodedata-normalize-nfd-s",
+      "slug": "s-unicodedata-normalize-nfd-s",
+      "nombre": "s = unicodedata.normalize(\"NFD\", s)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-join-ch-for-ch-in-s-if-unicodedata-category-ch-mn",
+      "slug": "s-join-ch-for-ch-in-s-if-unicodedata-category-ch-mn",
+      "nombre": "s = \"\".join(ch for ch in s if unicodedata.category(ch) != \"Mn\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-re-sub-r-s-s",
+      "slug": "s-re-sub-r-s-s",
+      "nombre": "s = re.sub(r\"\\s+\", \" \", s)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-s",
+      "slug": "return-s",
+      "nombre": "return s",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "def-slugify-s-str-str",
+      "slug": "def-slugify-s-str-str",
+      "nombre": "def slugify(s: str) -> str:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-norm-key-s",
+      "slug": "s-norm-key-s",
+      "nombre": "s = norm_key(s)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "s-re-sub-r-a-z0-9-s-strip",
+      "slug": "s-re-sub-r-a-z0-9-s-strip",
+      "nombre": "s = re.sub(r\"[^a-z0-9]+\", \"-\", s).strip(\"-\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-s-or-item",
+      "slug": "return-s-or-item",
+      "nombre": "return s or \"item\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "def-classify-nombre-str-str",
+      "slug": "def-classify-nombre-str-str",
+      "nombre": "def classify(nombre: str) -> str:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "n-norm-key-nombre",
+      "slug": "n-norm-key-nombre",
+      "nombre": "n = norm_key(nombre)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "plataformas-lo-pediste-como-profesiones",
+      "slug": "plataformas-lo-pediste-como-profesiones",
+      "nombre": "# Plataformas (lo pediste como \"profesiones\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-windows-in-n-return-plataformas-windows",
+      "slug": "if-windows-in-n-return-plataformas-windows",
+      "nombre": "if \"windows\" in n: return \"Plataformas: Windows\"",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "if-any-x-in-n-for-x-in-apple-ios-mac-return-plataformas-apple",
+      "slug": "if-any-x-in-n-for-x-in-apple-ios-mac-return-plataformas-apple",
+      "nombre": "if any(x in n for x in [\"apple\",\"ios\",\"mac\"]): return \"Plataformas: Apple\"",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "if-meta-in-n-return-plataformas-meta",
+      "slug": "if-meta-in-n-return-plataformas-meta",
+      "nombre": "if \"meta\" in n: return \"Plataformas: Meta\"",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "salud",
+      "slug": "salud",
+      "nombre": "# Salud",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-medic-enferm-odont-ciruj-psicolog-nutric-radiolog-anestes-fisioter-veterin-farmac-biolog-quimic-fisic-optic-optomet-laborator-pediatr",
+      "slug": "if-any-k-in-n-for-k-in-medic-enferm-odont-ciruj-psicolog-nutric-radiolog-anestes-fisioter-veterin-farmac-biolog-quimic-fisic-optic-optomet-laborator-pediatr",
+      "nombre": "if any(k in n for k in [\"medic\", \"enferm\", \"odont\", \"ciruj\", \"psicolog\", \"nutric\", \"radiolog\", \"anestes\", \"fisioter\", \"veterin\", \"farmac\", \"biolog\", \"quimic\", \"fisic\", \"optic\", \"optomet\", \"laborator\", \"pediatr\"]):",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-salud-y-ciencias",
+      "slug": "return-salud-y-ciencias",
+      "nombre": "return \"Salud y Ciencias\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "derecho-gobierno",
+      "slug": "derecho-gobierno",
+      "nombre": "# Derecho / Gobierno",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-abog-notar-actuar-derecho-criminolog-juri-gobierno-administracion-publica-civismo-politic-juez",
+      "slug": "if-any-k-in-n-for-k-in-abog-notar-actuar-derecho-criminolog-juri-gobierno-administracion-publica-civismo-politic-juez",
+      "nombre": "if any(k in n for k in [\"abog\", \"notar\", \"actuar\", \"derecho\", \"criminolog\", \"juri\", \"gobierno\", \"administracion publica\", \"civismo\", \"politic\", \"juez\"]):",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-empresa-finanzas-y-derecho",
+      "slug": "return-empresa-finanzas-y-derecho",
+      "nombre": "return \"Empresa, Finanzas y Derecho\"",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "finanzas-admin",
+      "slug": "finanzas-admin",
+      "nombre": "# Finanzas / Admin",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-contad-contador-auditor-finanz-banca-credito-impuest-econom-mercadotec-marketing-administracion-admon-recursos-humanos-bolsa",
+      "slug": "if-any-k-in-n-for-k-in-contad-contador-auditor-finanz-banca-credito-impuest-econom-mercadotec-marketing-administracion-admon-recursos-humanos-bolsa",
+      "nombre": "if any(k in n for k in [\"contad\", \"contador\", \"auditor\", \"finanz\", \"banca\", \"credito\", \"impuest\", \"econom\", \"mercadotec\", \"marketing\", \"administracion\", \"admon\", \"recursos humanos\", \"bolsa\"]):",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tech-ing-construccion",
+      "slug": "tech-ing-construccion",
+      "nombre": "# Tech / Ing / Construcción",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-ingenier-ing-software-sistemas-comput-informat-electron-electric-telecom-redes-program-arquitect-construccion-mecan-diesel-topograf-metrolog-instrumentacion-control-naval",
+      "slug": "if-any-k-in-n-for-k-in-ingenier-ing-software-sistemas-comput-informat-electron-electric-telecom-redes-program-arquitect-construccion-mecan-diesel-topograf-metrolog-instrumentacion-control-naval",
+      "nombre": "if any(k in n for k in [\"ingenier\", \"ing.\", \"software\", \"sistemas\", \"comput\", \"informat\", \"electron\", \"electric\", \"telecom\", \"redes\", \"program\", \"arquitect\", \"construccion\", \"mecan\", \"diesel\", \"topograf\", \"metrolog\", \"instrumentacion\", \"control\", \"naval\"]):",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-ingenieria-tecnologia-y-construccion",
+      "slug": "return-ingenieria-tecnologia-y-construccion",
+      "nombre": "return \"Ingeniería, Tecnología y Construcción\"",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "educacion",
+      "slug": "educacion",
+      "nombre": "# Educación",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-educ-docen-profesor-maestro-pedagog-telebach-telesec-metodologia-orientacion-escolar",
+      "slug": "if-any-k-in-n-for-k-in-educ-docen-profesor-maestro-pedagog-telebach-telesec-metodologia-orientacion-escolar",
+      "nombre": "if any(k in n for k in [\"educ\", \"docen\", \"profesor\", \"maestro\", \"pedagog\", \"telebach\", \"telesec\", \"metodologia\", \"orientacion escolar\"]):",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-educacion-arte-y-diseno",
+      "slug": "return-educacion-arte-y-diseno",
+      "nombre": "return \"Educación, Arte y Diseño\"",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "arte",
+      "slug": "arte",
+      "nombre": "# Arte",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-arte-artes-musica-canto-piano-violin-viola-tromp-clarin-fagot-guitarr-danza-teatro-escenograf-pintur-fotograf-composic-actor-actuacion-dj",
+      "slug": "if-any-k-in-n-for-k-in-arte-artes-musica-canto-piano-violin-viola-tromp-clarin-fagot-guitarr-danza-teatro-escenograf-pintur-fotograf-composic-actor-actuacion-dj",
+      "nombre": "if any(k in n for k in [\"arte\", \"artes\", \"musica\", \"canto\", \"piano\", \"violin\", \"viola\", \"tromp\", \"clarin\", \"fagot\", \"guitarr\", \"danza\", \"teatro\", \"escenograf\", \"pintur\", \"fotograf\", \"composic\", \"actor\", \"actuacion\", \"dj\"]):",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "servicios-oficios",
+      "slug": "servicios-oficios",
+      "nombre": "# Servicios / Oficios",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-secretar-oficin-capturista-operador-mantenimiento-refrigeracion-aire-acondicionado-cocina-repost-hotel-gastronom-turism-ventas-carpinter-soldad-pailer-corte-y-confeccion-sanitario",
+      "slug": "if-any-k-in-n-for-k-in-secretar-oficin-capturista-operador-mantenimiento-refrigeracion-aire-acondicionado-cocina-repost-hotel-gastronom-turism-ventas-carpinter-soldad-pailer-corte-y-confeccion-sanitario",
+      "nombre": "if any(k in n for k in [\"secretar\", \"oficin\", \"capturista\", \"operador\", \"mantenimiento\", \"refrigeracion\", \"aire acondicionado\", \"cocina\", \"repost\", \"hotel\", \"gastronom\", \"turism\", \"ventas\", \"carpinter\", \"soldad\", \"pailer\", \"corte y confeccion\", \"sanitario\"]):",
+      "categoria": "Servicios, Seguridad y Turismo",
+      "descripcion": "",
+      "funciones": [
+        "Recepción y registro",
+        "Ejecución del servicio",
+        "Control de calidad",
+        "Comunicación",
+        "Cierre y reporte"
+      ],
+      "herramientas": [
+        "Checklist operativo",
+        "Plantillas de reporte",
+        "Scripts de atención",
+        "Registro de incidentes",
+        "Agenda"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-servicios-seguridad-y-turismo",
+      "slug": "return-servicios-seguridad-y-turismo",
+      "nombre": "return \"Servicios, Seguridad y Turismo\"",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "agro",
+      "slug": "agro",
+      "nombre": "# Agro",
+      "categoria": "Comercio, Agricultura y Varios",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Ejecutar",
+        "Monitorear",
+        "Registrar resultados",
+        "Optimizar"
+      ],
+      "herramientas": [
+        "Checklist de proceso",
+        "Plantillas de registro",
+        "Control de stock/insumos",
+        "Calendario",
+        "Guías base"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-any-k-in-n-for-k-in-agro-agric-pesca-pecuar-hortic-ganad-zootecn-forest-acuic-bovin-ovinos-porcic-suelos-fertiliz-viticult-enolog",
+      "slug": "if-any-k-in-n-for-k-in-agro-agric-pesca-pecuar-hortic-ganad-zootecn-forest-acuic-bovin-ovinos-porcic-suelos-fertiliz-viticult-enolog",
+      "nombre": "if any(k in n for k in [\"agro\", \"agric\", \"pesca\", \"pecuar\", \"hortic\", \"ganad\", \"zootecn\", \"forest\", \"acuic\", \"bovin\", \"ovinos\", \"porcic\", \"suelos\", \"fertiliz\", \"viticult\", \"enolog\"]):",
+      "categoria": "Comercio, Agricultura y Varios",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Ejecutar",
+        "Monitorear",
+        "Registrar resultados",
+        "Optimizar"
+      ],
+      "herramientas": [
+        "Checklist de proceso",
+        "Plantillas de registro",
+        "Control de stock/insumos",
+        "Calendario",
+        "Guías base"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-comercio-agricultura-y-varios",
+      "slug": "return-comercio-agricultura-y-varios",
+      "nombre": "return \"Comercio, Agricultura y Varios\"",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "return-varios",
+      "slug": "return-varios",
+      "nombre": "return \"Varios\"",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lineas",
+      "slug": "lineas",
+      "nombre": "# lineas",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lines",
+      "slug": "lines",
+      "nombre": "lines = []",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-ln-in-raw-splitlines",
+      "slug": "for-ln-in-raw-splitlines",
+      "nombre": "for ln in raw.splitlines():",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ln-ln-strip",
+      "slug": "ln-ln-strip",
+      "nombre": "ln = ln.strip()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-ln",
+      "slug": "if-not-ln",
+      "nombre": "if not ln:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "continue",
+      "slug": "continue",
+      "nombre": "continue",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "low-norm-key-ln",
+      "slug": "low-norm-key-ln",
+      "nombre": "low = norm_key(ln)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tirar-encabezados-tipicos",
+      "slug": "tirar-encabezados-tipicos",
+      "nombre": "# tirar encabezados típicos",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "cortar-cuando-viene-dos-profesiones-en-una-misma-linea-con-muchos-espacios",
+      "slug": "cortar-cuando-viene-dos-profesiones-en-una-misma-linea-con-muchos-espacios",
+      "nombre": "# cortar cuando viene \"dos profesiones en una misma línea\" con muchos espacios",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "parts-re-split-r-s-2-ln",
+      "slug": "parts-re-split-r-s-2-ln",
+      "nombre": "parts = re.split(r\"\\s{2,}\", ln)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-p-in-parts",
+      "slug": "for-p-in-parts",
+      "nombre": "for p in parts:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "p-p-strip",
+      "slug": "p-p-strip",
+      "nombre": "p = p.strip()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-p",
+      "slug": "if-not-p",
+      "nombre": "if not p:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "limpiar-numeros-tipo-12",
+      "slug": "limpiar-numeros-tipo-12",
+      "nombre": "# limpiar números tipo \"12.\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "p-re-sub-r-d-s-p-strip",
+      "slug": "p-re-sub-r-d-s-p-strip",
+      "nombre": "p = re.sub(r\"^\\d+\\.\\s*\", \"\", p).strip()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-len-p-1",
+      "slug": "if-len-p-1",
+      "nombre": "if len(p) <= 1:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "lines-append-p",
+      "slug": "lines-append-p",
+      "nombre": "lines.append(p)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "extras-plataformas-lo-pediste",
+      "slug": "extras-plataformas-lo-pediste",
+      "nombre": "# extras plataformas (lo pediste)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "extra-platform",
+      "slug": "extra-platform",
+      "nombre": "extra_platform = [",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-windows-arquitecto-de-windows-desarrollador-de-windows-empleado-de-windows",
+      "slug": "ingeniero-de-windows-arquitecto-de-windows-desarrollador-de-windows-empleado-de-windows",
+      "nombre": "\"Ingeniero de Windows\",\"Arquitecto de Windows\",\"Desarrollador de Windows\",\"Empleado de Windows\",",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "ingeniero-de-apple-arquitecto-de-apple-desarrollador-de-apple-disenador-de-apple-empleado-de-apple",
+      "slug": "ingeniero-de-apple-arquitecto-de-apple-desarrollador-de-apple-disenador-de-apple-empleado-de-apple",
+      "nombre": "\"Ingeniero de Apple\",\"Arquitecto de Apple\",\"Desarrollador de Apple\",\"Diseñador de Apple\",\"Empleado de Apple\",",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "ingeniero-de-meta-arquitecto-de-meta-desarrollador-de-meta-usuario-experto-en-meta-profesional-en-estructura-de-meta",
+      "slug": "ingeniero-de-meta-arquitecto-de-meta-desarrollador-de-meta-usuario-experto-en-meta-profesional-en-estructura-de-meta",
+      "nombre": "\"Ingeniero de Meta\",\"Arquitecto de Meta\",\"Desarrollador de Meta\",\"Usuario experto en Meta\",\"Profesional en estructura de Meta\",",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "lines-extend-extra-platform",
+      "slug": "lines-extend-extra-platform",
+      "nombre": "lines.extend(extra_platform)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "dedupe",
+      "slug": "dedupe",
+      "nombre": "# dedupe",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "seen-set",
+      "slug": "seen-set",
+      "nombre": "seen = set()",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items",
+      "slug": "items",
+      "nombre": "items = []",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-nombre-in-lines",
+      "slug": "for-nombre-in-lines",
+      "nombre": "for nombre in lines:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "key-norm-key-nombre",
+      "slug": "key-norm-key-nombre",
+      "nombre": "key = norm_key(nombre)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-not-key-or-key-in-seen",
+      "slug": "if-not-key-or-key-in-seen",
+      "nombre": "if not key or key in seen:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "seen-add-key",
+      "slug": "seen-add-key",
+      "nombre": "seen.add(key)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "cat-classify-nombre",
+      "slug": "cat-classify-nombre",
+      "nombre": "cat = classify(nombre)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "it",
+      "slug": "it",
+      "nombre": "it = {",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "id-slugify-nombre",
+      "slug": "id-slugify-nombre",
+      "nombre": "\"id\": slugify(nombre),",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "slug-slugify-nombre",
+      "slug": "slug-slugify-nombre",
+      "nombre": "\"slug\": slugify(nombre),",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "nombre-nombre-strip",
+      "slug": "nombre-nombre-strip",
+      "nombre": "\"nombre\": nombre.strip(),",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "categoria-cat",
+      "slug": "categoria-cat",
+      "nombre": "\"categoria\": cat,",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "descripcion",
+      "slug": "descripcion",
+      "nombre": "\"descripcion\": \"\",",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones",
+      "slug": "funciones",
+      "nombre": "\"funciones\": [],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas",
+      "slug": "herramientas",
+      "nombre": "\"herramientas\": [],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tags",
+      "slug": "tags",
+      "nombre": "\"tags\": []",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tags-simples",
+      "slug": "tags-simples",
+      "nombre": "# tags simples",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "tags",
+      "slug": "tags",
+      "nombre": "tags = []",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "if-windows-in-it-nombre-tags-append-windows",
+      "slug": "if-windows-in-it-nombre-tags-append-windows",
+      "nombre": "if \"Windows\" in it[\"nombre\"]: tags.append(\"Windows\")",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "if-apple-in-it-nombre-tags-append-apple",
+      "slug": "if-apple-in-it-nombre-tags-append-apple",
+      "nombre": "if \"Apple\" in it[\"nombre\"]: tags.append(\"Apple\")",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "if-meta-in-it-nombre-tags-append-meta",
+      "slug": "if-meta-in-it-nombre-tags-append-meta",
+      "nombre": "if \"Meta\" in it[\"nombre\"]: tags.append(\"Meta\")",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "it-tags-tags",
+      "slug": "it-tags-tags",
+      "nombre": "it[\"tags\"] = tags",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items-append-it",
+      "slug": "items-append-it",
+      "nombre": "items.append(it)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "motor-base-por-categoria-minimo",
+      "slug": "motor-base-por-categoria-minimo",
+      "nombre": "# motor base por categoría (mínimo)",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "t",
+      "slug": "t",
+      "nombre": "T = {",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "salud-y-ciencias",
+      "slug": "salud-y-ciencias",
+      "nombre": "\"Salud y Ciencias\": {",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-triage-y-evaluacion-inicial-diagnostico-y-plan-de-accion-seguimiento-y-control-educacion-al-paciente-coordinacion-con-otros-profesionales",
+      "slug": "funciones-triage-y-evaluacion-inicial-diagnostico-y-plan-de-accion-seguimiento-y-control-educacion-al-paciente-coordinacion-con-otros-profesionales",
+      "nombre": "\"funciones\": [\"Triage y evaluación inicial\",\"Diagnóstico y plan de acción\",\"Seguimiento y control\",\"Educación al paciente\",\"Coordinación con otros profesionales\"],",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-clinico-plantillas-de-historia-registro-guias-de-practica-base-protocolos-de-derivacion-agenda-recordatorios",
+      "slug": "herramientas-checklist-clinico-plantillas-de-historia-registro-guias-de-practica-base-protocolos-de-derivacion-agenda-recordatorios",
+      "nombre": "\"herramientas\": [\"Checklist clínico\",\"Plantillas de historia/registro\",\"Guías de práctica (base)\",\"Protocolos de derivación\",\"Agenda/recordatorios\"],",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "item",
+      "slug": "item",
+      "nombre": "},",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingenieria-tecnologia-y-construccion",
+      "slug": "ingenieria-tecnologia-y-construccion",
+      "nombre": "\"Ingeniería, Tecnología y Construcción\": {",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-relevar-requerimientos-disenar-solucion-implementar-y-probar-documentar-y-versionar-operar-y-mantener",
+      "slug": "funciones-relevar-requerimientos-disenar-solucion-implementar-y-probar-documentar-y-versionar-operar-y-mantener",
+      "nombre": "\"funciones\": [\"Relevar requerimientos\",\"Diseñar solución\",\"Implementar y probar\",\"Documentar y versionar\",\"Operar y mantener\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-de-entrega-plantilla-adr-plantilla-readme-plan-de-pruebas-guia-de-troubleshooting",
+      "slug": "herramientas-checklist-de-entrega-plantilla-adr-plantilla-readme-plan-de-pruebas-guia-de-troubleshooting",
+      "nombre": "\"herramientas\": [\"Checklist de entrega\",\"Plantilla ADR\",\"Plantilla README\",\"Plan de pruebas\",\"Guía de troubleshooting\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "educacion-arte-y-diseno",
+      "slug": "educacion-arte-y-diseno",
+      "nombre": "\"Educación, Arte y Diseño\": {",
+      "categoria": "Educación, Arte y Diseño",
+      "descripcion": "",
+      "funciones": [
+        "Planificar",
+        "Producir material",
+        "Ejecutar",
+        "Evaluar resultados",
+        "Iterar/mejorar"
+      ],
+      "herramientas": [
+        "Guía de planificación",
+        "Plantillas de contenidos",
+        "Rúbricas/checklist",
+        "Biblioteca de recursos",
+        "Calendario"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-planificar-producir-material-ejecutar-evaluar-resultados-iterar-mejorar",
+      "slug": "funciones-planificar-producir-material-ejecutar-evaluar-resultados-iterar-mejorar",
+      "nombre": "\"funciones\": [\"Planificar\",\"Producir material\",\"Ejecutar\",\"Evaluar resultados\",\"Iterar/mejorar\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-guia-de-planificacion-plantillas-de-contenidos-rubricas-checklist-biblioteca-de-recursos-calendario",
+      "slug": "herramientas-guia-de-planificacion-plantillas-de-contenidos-rubricas-checklist-biblioteca-de-recursos-calendario",
+      "nombre": "\"herramientas\": [\"Guía de planificación\",\"Plantillas de contenidos\",\"Rúbricas/checklist\",\"Biblioteca de recursos\",\"Calendario\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "empresa-finanzas-y-derecho",
+      "slug": "empresa-finanzas-y-derecho",
+      "nombre": "\"Empresa, Finanzas y Derecho\": {",
+      "categoria": "Empresa, Finanzas y Derecho",
+      "descripcion": "",
+      "funciones": [
+        "Diagnóstico",
+        "Estrategia",
+        "Documentación",
+        "Plazos",
+        "Riesgos"
+      ],
+      "herramientas": [
+        "Plantillas",
+        "Checklist",
+        "Matriz riesgos",
+        "Vencimientos",
+        "Tablero"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-diagnostico-estrategia-documentacion-plazos-riesgos",
+      "slug": "funciones-diagnostico-estrategia-documentacion-plazos-riesgos",
+      "nombre": "\"funciones\": [\"Diagnóstico\",\"Estrategia\",\"Documentación\",\"Plazos\",\"Riesgos\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-plantillas-checklist-matriz-riesgos-vencimientos-tablero",
+      "slug": "herramientas-plantillas-checklist-matriz-riesgos-vencimientos-tablero",
+      "nombre": "\"herramientas\": [\"Plantillas\",\"Checklist\",\"Matriz riesgos\",\"Vencimientos\",\"Tablero\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "servicios-seguridad-y-turismo",
+      "slug": "servicios-seguridad-y-turismo",
+      "nombre": "\"Servicios, Seguridad y Turismo\": {",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-recepcion-y-registro-ejecucion-del-servicio-control-de-calidad-comunicacion-cierre-y-reporte",
+      "slug": "funciones-recepcion-y-registro-ejecucion-del-servicio-control-de-calidad-comunicacion-cierre-y-reporte",
+      "nombre": "\"funciones\": [\"Recepción y registro\",\"Ejecución del servicio\",\"Control de calidad\",\"Comunicación\",\"Cierre y reporte\"],",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-operativo-plantillas-de-reporte-scripts-de-atencion-registro-de-incidentes-agenda",
+      "slug": "herramientas-checklist-operativo-plantillas-de-reporte-scripts-de-atencion-registro-de-incidentes-agenda",
+      "nombre": "\"herramientas\": [\"Checklist operativo\",\"Plantillas de reporte\",\"Scripts de atención\",\"Registro de incidentes\",\"Agenda\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "comercio-agricultura-y-varios",
+      "slug": "comercio-agricultura-y-varios",
+      "nombre": "\"Comercio, Agricultura y Varios\": {",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-planificar-ejecutar-monitorear-registrar-resultados-optimizar",
+      "slug": "funciones-planificar-ejecutar-monitorear-registrar-resultados-optimizar",
+      "nombre": "\"funciones\": [\"Planificar\",\"Ejecutar\",\"Monitorear\",\"Registrar resultados\",\"Optimizar\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-de-proceso-plantillas-de-registro-control-de-stock-insumos-calendario-guias-base",
+      "slug": "herramientas-checklist-de-proceso-plantillas-de-registro-control-de-stock-insumos-calendario-guias-base",
+      "nombre": "\"herramientas\": [\"Checklist de proceso\",\"Plantillas de registro\",\"Control de stock/insumos\",\"Calendario\",\"Guías base\"],",
+      "categoria": "Ingeniería, Tecnología y Construcción",
+      "descripcion": "",
+      "funciones": [
+        "Relevar requerimientos",
+        "Diseñar solución",
+        "Implementar y probar",
+        "Documentar y versionar",
+        "Operar y mantener"
+      ],
+      "herramientas": [
+        "Checklist de entrega",
+        "Plantilla ADR",
+        "Plantilla README",
+        "Plan de pruebas",
+        "Guía de troubleshooting"
+      ],
+      "tags": []
+    },
+    {
+      "id": "varios",
+      "slug": "varios",
+      "nombre": "\"Varios\": {",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "funciones-relevar-ejecutar-documentar-validar-mejorar",
+      "slug": "funciones-relevar-ejecutar-documentar-validar-mejorar",
+      "nombre": "\"funciones\": [\"Relevar\",\"Ejecutar\",\"Documentar\",\"Validar\",\"Mejorar\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "herramientas-checklist-base-plantilla-de-reporte-plantilla-de-notas-tablero-simple-guia-de-pasos",
+      "slug": "herramientas-checklist-base-plantilla-de-reporte-plantilla-de-notas-tablero-simple-guia-de-pasos",
+      "nombre": "\"herramientas\": [\"Checklist base\",\"Plantilla de reporte\",\"Plantilla de notas\",\"Tablero simple\",\"Guía de pasos\"],",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "for-it-in-items",
+      "slug": "for-it-in-items",
+      "nombre": "for it in items:",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "base-t-get-it-categoria-t-varios",
+      "slug": "base-t-get-it-categoria-t-varios",
+      "nombre": "base = T.get(it[\"categoria\"], T[\"Varios\"])",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "it-funciones-list-base-funciones",
+      "slug": "it-funciones-list-base-funciones",
+      "nombre": "it[\"funciones\"] = list(base[\"funciones\"])",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "it-herramientas-list-base-herramientas",
+      "slug": "it-herramientas-list-base-herramientas",
+      "nombre": "it[\"herramientas\"] = list(base[\"herramientas\"])",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "out",
+      "slug": "out",
+      "nombre": "out = {",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "generatedat-datetime-utcnow-isoformat-z",
+      "slug": "generatedat-datetime-utcnow-isoformat-z",
+      "nombre": "\"generatedAt\": datetime.utcnow().isoformat() + \"Z\",",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "total-len-items",
+      "slug": "total-len-items",
+      "nombre": "\"total\": len(items),",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "items-items",
+      "slug": "items-items",
+      "nombre": "\"items\": items",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "path-data-profesiones-catalogo-json-write-text-json-dumps-out-ensure-ascii-false-indent-2-encoding-utf-8",
+      "slug": "path-data-profesiones-catalogo-json-write-text-json-dumps-out-ensure-ascii-false-indent-2-encoding-utf-8",
+      "nombre": "Path(\"data/profesiones_catalogo.json\").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding=\"utf-8\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-f-ok-generado-data-profesiones-catalogo-json-con-total-len-items",
+      "slug": "print-f-ok-generado-data-profesiones-catalogo-json-con-total-len-items",
+      "nombre": "print(f\"✅ OK. Generado data/profesiones_catalogo.json con TOTAL = {len(items)}\")",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-ejemplos-x-nombre-for-x-in-items-8",
+      "slug": "print-ejemplos-x-nombre-for-x-in-items-8",
+      "nombre": "print(\"✅ EJEMPLOS:\", [x[\"nombre\"] for x in items[:8]])",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "py",
+      "slug": "py",
+      "nombre": "PY",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-listo-catalogo-actualizado",
+      "slug": "echo-listo-catalogo-actualizado",
+      "nombre": "echo \"✅ Listo. Catálogo actualizado.\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-para-confirmar-rapido-total-del-json",
+      "slug": "echo-para-confirmar-rapido-total-del-json",
+      "nombre": "echo \"Para confirmar rápido (total del JSON):\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "import-json",
+      "slug": "import-json",
+      "nombre": "import json",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "j-json-load-open-data-profesiones-catalogo-json-r-encoding-utf-8",
+      "slug": "j-json-load-open-data-profesiones-catalogo-json-r-encoding-utf-8",
+      "nombre": "j=json.load(open(\"data/profesiones_catalogo.json\",\"r\",encoding=\"utf-8\"))",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "print-total-json-j-total",
+      "slug": "print-total-json-j-total",
+      "nombre": "print(\"TOTAL_JSON =\", j[\"total\"])",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-reiniciar-servidor-servidor",
+      "slug": "echo-reiniciar-servidor-servidor",
+      "nombre": "echo \"🔴 REINICIAR SERVIDOR (SERVIDOR)\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-1-anda-a-la-terminal-del-servidor",
+      "slug": "echo-1-anda-a-la-terminal-del-servidor",
+      "nombre": "echo \"1) Andá a la terminal del SERVIDOR\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-2-ctrl-c",
+      "slug": "echo-2-ctrl-c",
+      "nombre": "echo \"2) Ctrl+C\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-3-pega-esto",
+      "slug": "echo-3-pega-esto",
+      "nombre": "echo \"3) Pegá esto:\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "echo-cd-arkheos-09-experimentos-arkhe-os-rm-rf-next-port-3000-npm-run-dev",
+      "slug": "echo-cd-arkheos-09-experimentos-arkhe-os-rm-rf-next-port-3000-npm-run-dev",
+      "nombre": "echo \"cd ~/ARKHEOS/09_Experimentos/arkhe-os && rm -rf .next && PORT=3000 npm run dev\"",
+      "categoria": "Varios",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": []
+    },
+    {
+      "id": "ingeniero-de-windows",
+      "slug": "ingeniero-de-windows",
+      "nombre": "Ingeniero de Windows",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "arquitecto-de-windows",
+      "slug": "arquitecto-de-windows",
+      "nombre": "Arquitecto de Windows",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "desarrollador-de-windows",
+      "slug": "desarrollador-de-windows",
+      "nombre": "Desarrollador de Windows",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "empleado-de-windows",
+      "slug": "empleado-de-windows",
+      "nombre": "Empleado de Windows",
+      "categoria": "Plataformas: Windows",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Windows"
+      ]
+    },
+    {
+      "id": "ingeniero-de-apple",
+      "slug": "ingeniero-de-apple",
+      "nombre": "Ingeniero de Apple",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "arquitecto-de-apple",
+      "slug": "arquitecto-de-apple",
+      "nombre": "Arquitecto de Apple",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "desarrollador-de-apple",
+      "slug": "desarrollador-de-apple",
+      "nombre": "Desarrollador de Apple",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "disenador-de-apple",
+      "slug": "disenador-de-apple",
+      "nombre": "Diseñador de Apple",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "empleado-de-apple",
+      "slug": "empleado-de-apple",
+      "nombre": "Empleado de Apple",
+      "categoria": "Plataformas: Apple",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Apple"
+      ]
+    },
+    {
+      "id": "ingeniero-de-meta",
+      "slug": "ingeniero-de-meta",
+      "nombre": "Ingeniero de Meta",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "arquitecto-de-meta",
+      "slug": "arquitecto-de-meta",
+      "nombre": "Arquitecto de Meta",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "desarrollador-de-meta",
+      "slug": "desarrollador-de-meta",
+      "nombre": "Desarrollador de Meta",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "usuario-experto-en-meta",
+      "slug": "usuario-experto-en-meta",
+      "nombre": "Usuario experto en Meta",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    },
+    {
+      "id": "profesional-en-estructura-de-meta",
+      "slug": "profesional-en-estructura-de-meta",
+      "nombre": "Profesional en estructura de Meta",
+      "categoria": "Plataformas: Meta",
+      "descripcion": "",
+      "funciones": [
+        "Relevar",
+        "Ejecutar",
+        "Documentar",
+        "Validar",
+        "Mejorar"
+      ],
+      "herramientas": [
+        "Checklist base",
+        "Plantilla de reporte",
+        "Plantilla de notas",
+        "Tablero simple",
+        "Guía de pasos"
+      ],
+      "tags": [
+        "Meta"
+      ]
+    }
+  ]
+}
