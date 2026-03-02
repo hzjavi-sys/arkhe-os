@@ -1,0 +1,259 @@
+{
+  "generatedAt": "manual",
+  "items": [
+    {
+      "id": "typescript",
+      "nombre": "TypeScript",
+      "categoria": "Web / Backend",
+      "plataformas": ["web", "backend", "desktop"],
+      "queEs": "JavaScript con tipos. Reduce errores y mejora mantenimiento en proyectos grandes.",
+      "brillaEn": ["SaaS web", "Dashboards", "APIs", "Monorepos", "Proyectos grandes"],
+      "noConviene": ["Embebidos", "Juegos AAA de performance extrema"],
+      "stackRecomendado": {
+        "frontend": ["Next.js", "React", "Vite"],
+        "backend": ["Node.js", "NestJS", "Express"],
+        "db": ["Postgres", "SQLite", "Prisma"],
+        "deploy": ["Vercel", "Docker", "Railway", "Render"]
+      },
+      "salidas": ["Web SSR/SPA", "API", "Workers", "Desktop (Electron/Tauri)"],
+      "facilidad": "Alta",
+      "velocidad": "Alta",
+      "performance": "Media",
+      "ecosistema": "Enorme",
+      "notas": "Recomendado por defecto para BEACH OS cuando el objetivo sea Web + velocidad."
+    },
+    {
+      "id": "javascript",
+      "nombre": "JavaScript",
+      "categoria": "Web / Backend",
+      "plataformas": ["web", "backend"],
+      "queEs": "Lenguaje estándar del navegador. Base del frontend moderno.",
+      "brillaEn": ["Web rápida", "Prototipos", "Integración rápida"],
+      "noConviene": ["Proyectos grandes sin tipos", "Sistemas críticos sin disciplina"],
+      "stackRecomendado": {
+        "frontend": ["React", "Next.js", "Vue", "Svelte"],
+        "backend": ["Node.js", "Express"],
+        "db": ["Postgres", "MongoDB", "SQLite"]
+      },
+      "salidas": ["Web", "API"],
+      "facilidad": "Alta",
+      "velocidad": "Alta",
+      "performance": "Media",
+      "ecosistema": "Enorme",
+      "notas": "En proyectos serios, preferir TypeScript."
+    },
+    {
+      "id": "python",
+      "nombre": "Python",
+      "categoria": "Backend / IA / Automatización",
+      "plataformas": ["backend", "ia", "datos", "automation"],
+      "queEs": "Lenguaje versátil con ecosistema enorme para IA, datos y backend.",
+      "brillaEn": ["IA/ML", "APIs rápidas", "Automatizaciones", "ETL", "Scripting"],
+      "noConviene": ["Apps móviles nativas", "Frontend web puro", "Juegos AAA"],
+      "stackRecomendado": {
+        "backend": ["FastAPI", "Django"],
+        "ia": ["PyTorch", "TensorFlow", "scikit-learn"],
+        "data": ["Pandas", "Polars"],
+        "deploy": ["Docker", "Uvicorn/Gunicorn"]
+      },
+      "salidas": ["API", "Jobs", "Scripts", "Modelos IA"],
+      "facilidad": "Alta",
+      "velocidad": "Alta",
+      "performance": "Media",
+      "ecosistema": "Enorme",
+      "notas": "Ideal para “motor IA” y automatizaciones dentro de BEACH OS."
+    },
+    {
+      "id": "go",
+      "nombre": "Go (Golang)",
+      "categoria": "Backend / Infra",
+      "plataformas": ["backend", "infra"],
+      "queEs": "Lenguaje compilado, simple y rápido. Excelente para servicios.",
+      "brillaEn": ["APIs de alto rendimiento", "Microservicios", "CLI", "Infra"],
+      "noConviene": ["UI compleja", "Prototipado ultra rápido si no conocés Go"],
+      "stackRecomendado": {
+        "backend": ["Gin", "Fiber", "Go standard net/http"],
+        "db": ["Postgres", "Redis"],
+        "deploy": ["Docker", "Kubernetes"]
+      },
+      "salidas": ["Binario", "API", "Workers"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Alta",
+      "ecosistema": "Grande",
+      "notas": "Gran opción para servicios core 24/7."
+    },
+    {
+      "id": "java",
+      "nombre": "Java",
+      "categoria": "Backend / Enterprise",
+      "plataformas": ["backend"],
+      "queEs": "Lenguaje robusto para sistemas grandes y bancos.",
+      "brillaEn": ["Enterprise", "Bancos", "Sistemas grandes", "APIs"],
+      "noConviene": ["Prototipos rápidos con equipo chico"],
+      "stackRecomendado": {
+        "backend": ["Spring Boot"],
+        "db": ["Postgres", "Oracle"],
+        "deploy": ["Docker", "Kubernetes"]
+      },
+      "salidas": ["API", "Servicios"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Alta",
+      "ecosistema": "Enorme",
+      "notas": "Ideal cuando el cliente exige Java."
+    },
+    {
+      "id": "csharp",
+      "nombre": "C# (.NET)",
+      "categoria": "Backend / Windows / Juegos",
+      "plataformas": ["backend", "windows", "juegos"],
+      "queEs": "Lenguaje Microsoft. Muy fuerte en backend y herramientas.",
+      "brillaEn": [".NET APIs", "Windows apps", "Unity"],
+      "noConviene": ["iOS nativo", "Frontend web puro"],
+      "stackRecomendado": {
+        "backend": [".NET Web API"],
+        "desktop": ["WPF", "WinUI"],
+        "juegos": ["Unity"]
+      },
+      "salidas": ["API", "Exe", "Unity builds"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Alta",
+      "ecosistema": "Enorme",
+      "notas": "Opción número 1 si el mundo es Microsoft."
+    },
+    {
+      "id": "swift",
+      "nombre": "Swift",
+      "categoria": "Mobile (iOS)",
+      "plataformas": ["ios", "apple"],
+      "queEs": "Lenguaje nativo para iOS/macOS.",
+      "brillaEn": ["Apps iOS premium", "Performance", "Integración Apple"],
+      "noConviene": ["Android nativo", "Multiplataforma rápida"],
+      "stackRecomendado": {
+        "mobile": ["SwiftUI", "UIKit"],
+        "backend": ["Se integra con cualquier API"]
+      },
+      "salidas": ["IPA", "App Store"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Alta",
+      "ecosistema": "Grande",
+      "notas": "Para apps iPhone serias, es el estándar."
+    },
+    {
+      "id": "kotlin",
+      "nombre": "Kotlin",
+      "categoria": "Mobile (Android)",
+      "plataformas": ["android"],
+      "queEs": "Lenguaje nativo para Android.",
+      "brillaEn": ["Android profesional", "Apps modernas", "Compose"],
+      "noConviene": ["iOS nativo"],
+      "stackRecomendado": {
+        "mobile": ["Jetpack Compose"],
+        "backend": ["Se integra con cualquier API"]
+      },
+      "salidas": ["AAB/APK", "Play Store"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Alta",
+      "ecosistema": "Grande",
+      "notas": "Android nativo recomendado."
+    },
+    {
+      "id": "dart",
+      "nombre": "Dart (Flutter)",
+      "categoria": "Mobile multiplataforma",
+      "plataformas": ["ios", "android", "web", "desktop"],
+      "queEs": "Lenguaje de Flutter para apps multiplataforma.",
+      "brillaEn": ["iOS+Android rápido", "UI consistente", "MVP"],
+      "noConviene": ["Apps iOS ultra integradas con Apple", "Juegos AAA"],
+      "stackRecomendado": {
+        "mobile": ["Flutter"],
+        "backend": ["Se integra con cualquier API"]
+      },
+      "salidas": ["iOS", "Android", "Web", "Desktop"],
+      "facilidad": "Media",
+      "velocidad": "Alta",
+      "performance": "Alta",
+      "ecosistema": "Grande",
+      "notas": "Excelente para sacar productos rápido."
+    },
+    {
+      "id": "cpp",
+      "nombre": "C++",
+      "categoria": "Sistemas / Juegos",
+      "plataformas": ["juegos", "sistemas"],
+      "queEs": "Lenguaje de alto rendimiento.",
+      "brillaEn": ["Unreal", "Motores propios", "Performance extrema"],
+      "noConviene": ["Prototipos rápidos", "Equipo sin experiencia"],
+      "stackRecomendado": {
+        "juegos": ["Unreal Engine"],
+        "sistemas": ["Libraries nativas"]
+      },
+      "salidas": ["Binarios", "Motores", "Juegos AAA"],
+      "facilidad": "Baja",
+      "velocidad": "Baja",
+      "performance": "Muy alta",
+      "ecosistema": "Enorme",
+      "notas": "Para performance extrema."
+    },
+    {
+      "id": "rust",
+      "nombre": "Rust",
+      "categoria": "Sistemas / Seguridad",
+      "plataformas": ["sistemas", "backend", "wasm"],
+      "queEs": "Performance con seguridad de memoria.",
+      "brillaEn": ["Servicios críticos", "CLI", "WASM"],
+      "noConviene": ["Equipo junior", "Entrega ultra urgente si no conocen Rust"],
+      "stackRecomendado": {
+        "backend": ["Axum", "Actix"],
+        "cli": ["Clap"],
+        "deploy": ["Docker"]
+      },
+      "salidas": ["Binarios", "Servicios", "WASM"],
+      "facilidad": "Media",
+      "velocidad": "Media",
+      "performance": "Muy alta",
+      "ecosistema": "Grande",
+      "notas": "Ideal para partes core."
+    },
+    {
+      "id": "sql",
+      "nombre": "SQL",
+      "categoria": "Datos",
+      "plataformas": ["datos"],
+      "queEs": "Lenguaje para consultar y modelar datos en BD relacionales.",
+      "brillaEn": ["Reportes", "Dashboards", "ETL", "Consultas"],
+      "noConviene": ["UI", "Apps completas sin backend"],
+      "stackRecomendado": {
+        "db": ["Postgres", "MySQL", "SQLite"]
+      },
+      "salidas": ["Consultas", "Modelos datos"],
+      "facilidad": "Media",
+      "velocidad": "Alta",
+      "performance": "Alta",
+      "ecosistema": "Enorme",
+      "notas": "Siempre aparece en sistemas serios."
+    },
+    {
+      "id": "bash",
+      "nombre": "Bash/Shell",
+      "categoria": "DevOps / Automatización",
+      "plataformas": ["devops", "automation"],
+      "queEs": "Scripts de terminal.",
+      "brillaEn": ["Backups", "Deploy", "Automatizaciones"],
+      "noConviene": ["Apps grandes", "Lógica compleja"],
+      "stackRecomendado": {
+        "devops": ["CI/CD", "Cron"]
+      },
+      "salidas": ["Scripts"],
+      "facilidad": "Media",
+      "velocidad": "Alta",
+      "performance": "N/A",
+      "ecosistema": "Grande",
+      "notas": "Útil para operaciones."
+    }
+  ]
+}

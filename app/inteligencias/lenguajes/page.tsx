@@ -1,54 +1,64 @@
 "use client";
-import React, { useMemo, useState } from "react";
+
+import React, { useEffect, useMemo, useState } from "react";
 import { BEACH } from "../../../components/diseno/theme";
 
 type Lang = {
   id: string;
   nombre: string;
   categoria: string;
-  para: string[];
-  nota: string;
-  ejemplos: string[];
+  plataformas: string[];
+  queEs: string;
+  brillaEn: string[];
+  noConviene: string[];
+  stackRecomendado: any;
+  salidas: string[];
+  facilidad: string;
+  velocidad: string;
+  performance: string;
+  ecosistema: string;
+  notas?: string;
 };
 
-const LENGUAJES: Lang[] = [
-  // Web
-  { id:"js", nombre:"JavaScript", categoria:"Web", para:["Front-end","Back-end (Node.js)","Apps híbridas"], nota:"El estándar del navegador.", ejemplos:["React/Next","Node.js","Express"] },
-  { id:"ts", nombre:"TypeScript", categoria:"Web", para:["Web grande y mantenible","Back-end"], nota:"JS con tipos (menos bugs).", ejemplos:["Next.js","NestJS"] },
-  { id:"php", nombre:"PHP", categoria:"Web", para:["Web tradicional","CMS"], nota:"Muy usado en hosting compartido.", ejemplos:["Laravel","WordPress"] },
-  { id:"py", nombre:"Python", categoria:"Web/IA", para:["Back-end","Data/IA","Automatizaciones"], nota:"Simple y poderoso.", ejemplos:["Django","FastAPI"] },
-  { id:"rb", nombre:"Ruby", categoria:"Web", para:["Back-end"], nota:"Productividad alta.", ejemplos:["Rails"] },
-  { id:"go", nombre:"Go", categoria:"Back-end", para:["APIs rápidas","Microservicios"], nota:"Rendimiento + simplicidad.", ejemplos:["Gin","Fiber"] },
+type ApiResp = { ok: boolean; total: number; items: Lang[] };
 
-  // Mobile
-  { id:"swift", nombre:"Swift", categoria:"Mobile", para:["iOS / iPadOS"], nota:"Nativo Apple.", ejemplos:["SwiftUI","UIKit"] },
-  { id:"kotlin", nombre:"Kotlin", categoria:"Mobile", para:["Android"], nota:"Nativo Android moderno.", ejemplos:["Jetpack Compose"] },
-  { id:"dart", nombre:"Dart", categoria:"Mobile", para:["Apps multiplataforma"], nota:"Muy usado con Flutter.", ejemplos:["Flutter"] },
-  { id:"cs", nombre:"C#", categoria:"Mobile/Juegos", para:["Apps","Juegos"], nota:"Muy fuerte con Microsoft y Unity.", ejemplos:[".NET","Unity"] },
-
-  // Juegos / performance
-  { id:"cpp", nombre:"C++", categoria:"Juegos/Performance", para:["Motores","Performance"], nota:"Muy usado en engines.", ejemplos:["Unreal","Engines propios"] },
-  { id:"c", nombre:"C", categoria:"Sistemas", para:["Embebidos","Bajo nivel"], nota:"Base de muchos sistemas.", ejemplos:["Firmware"] },
-
-  // Datos
-  { id:"sql", nombre:"SQL", categoria:"Datos", para:["Bases de datos"], nota:"Lenguaje de consultas.", ejemplos:["Postgres","MySQL","SQLite"] },
-
-  // Infra
-  { id:"bash", nombre:"Bash/Shell", categoria:"DevOps", para:["Automatizar servidores"], nota:"Scripts y administración.", ejemplos:["CI/CD","Deploy"] },
+const PLATAFORMAS = [
+  { id: "web", label: "Web" },
+  { id: "backend", label: "Backend/APIs" },
+  { id: "ios", label: "iOS" },
+  { id: "android", label: "Android" },
+  { id: "juegos", label: "Juegos" },
+  { id: "datos", label: "Datos" },
+  { id: "devops", label: "DevOps" },
+  { id: "automation", label: "Automatización" },
 ];
 
 export default function LenguajesPage() {
   const [q, setQ] = useState("");
-  const [open, setOpen] = useState(false);
+  const [plat, setPlat] = useState<string>("todos");
+  const [items, setItems] = useState<Lang[]>([]);
   const [sel, setSel] = useState<Lang | null>(null);
+
+  useEffect(() => {
+    fetch("/api/lenguajes", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((j: ApiResp) => setItems(j.ok ? j.items : []))
+      .catch(() => setItems([]));
+  }, []);
 
   const filtrados = useMemo(() => {
     const qq = q.trim().toLowerCase();
-    if (!qq) return LENGUAJES;
-    return LENGUAJES.filter((l) =>
-      (l.nombre + " " + l.categoria + " " + l.para.join(" ")).toLowerCase().includes(qq)
-    );
-  }, [q]);
+    return items.filter((x) => {
+      const okPlat = plat === "todos" ? true : (x.plataformas || []).includes(plat);
+      const hay =
+        !qq ||
+        x.nombre.toLowerCase().includes(qq) ||
+        x.categoria.toLowerCase().includes(qq) ||
+        (x.queEs || "").toLowerCase().includes(qq) ||
+        (x.brillaEn || []).join(" ").toLowerCase().includes(qq);
+      return okPlat && hay;
+    });
+  }, [items, q, plat]);
 
   const card: React.CSSProperties = {
     borderRadius: 16,
@@ -61,21 +71,17 @@ export default function LenguajesPage() {
     textAlign: "left",
   };
 
-  function abrir(l: Lang) {
-    setSel(l);
-    setOpen(true);
-  }
-
   return (
     <>
       <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
         <div style={{ fontSize: 18, fontWeight: 950, color: BEACH.text }}>
-          Lenguajes de Programación ({filtrados.length})
+          Lenguajes ({filtrados.length})
         </div>
+
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Buscar lenguaje..."
+          placeholder="Buscar..."
           style={{
             flex: "1 1 320px",
             padding: "10px 12px",
@@ -87,90 +93,126 @@ export default function LenguajesPage() {
             color: BEACH.text,
           }}
         />
-      </div>
 
-      <div style={{ marginTop: 14, display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 12 }}>
-        {filtrados.map((l) => (
-          <div key={l.id} style={card} onClick={() => abrir(l)}>
-            <div style={{ fontWeight: 950 }}>{l.nombre}</div>
-            <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 800, fontSize: 12 }}>{l.categoria}</div>
-            <div style={{ marginTop: 6, color: BEACH.muted, fontWeight: 700, fontSize: 12 }}>
-              {l.para.slice(0,3).join(" · ")}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Panel lateral */}
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
+        <select
+          value={plat}
+          onChange={(e) => setPlat(e.target.value)}
           style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(2,6,23,0.35)",
-            display: "flex",
-            justifyContent: "flex-end",
-            zIndex: 200,
+            padding: "10px 12px",
+            borderRadius: 14,
+            border: "1px solid rgba(15,23,42,0.14)",
+            background: "rgba(255,255,255,0.85)",
+            fontWeight: 800,
+            color: BEACH.text,
           }}
         >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              width: 520,
-              maxWidth: "92vw",
-              height: "100vh",
-              background: "rgba(255,255,255,0.96)",
-              borderLeft: "1px solid rgba(0,0,0,0.10)",
-              padding: 18,
-              overflow: "auto",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ fontWeight: 950, fontSize: 18, color: BEACH.text }}>Detalle</div>
-              <button
-                onClick={() => setOpen(false)}
+          <option value="todos">Todas</option>
+          {PLATAFORMAS.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 520px", gap: 14, marginTop: 14 }}>
+        {/* LISTA */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 12 }}>
+          {filtrados.map((l) => (
+            <div key={l.id} style={card} onClick={() => setSel(l)}>
+              <div style={{ fontWeight: 950 }}>{l.nombre}</div>
+              <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 800, fontSize: 12 }}>
+                {l.categoria} · {l.performance} perf · {l.velocidad} velocidad
+              </div>
+              <div style={{ marginTop: 8, color: BEACH.text, fontWeight: 700, fontSize: 13, lineHeight: 1.25 }}>
+                {l.queEs}
+              </div>
+              <div style={{ marginTop: 8, color: BEACH.muted, fontWeight: 700, fontSize: 12 }}>
+                Plataformas: {(l.plataformas || []).join(", ")}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* DETALLE */}
+        <div
+          style={{
+            borderRadius: 18,
+            padding: 16,
+            background: "rgba(255,255,255,0.92)",
+            border: "1px solid rgba(15,23,42,0.10)",
+            boxShadow: "0 10px 26px rgba(2,6,23,0.10)",
+            minHeight: 260,
+          }}
+        >
+          {!sel ? (
+            <div style={{ color: BEACH.muted, fontWeight: 800 }}>
+              Elegí un lenguaje para ver detalle (sirve para decidir con qué construir la app).
+            </div>
+          ) : (
+            <>
+              <div style={{ fontSize: 20, fontWeight: 950, color: BEACH.text }}>{sel.nombre}</div>
+              <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 800 }}>{sel.categoria}</div>
+
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Qué es</div>
+              <div style={{ marginTop: 6, lineHeight: 1.4 }}>{sel.queEs}</div>
+
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Dónde brilla</div>
+              <ul style={{ marginTop: 6 }}>
+                {(sel.brillaEn || []).map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Dónde NO conviene</div>
+              <ul style={{ marginTop: 6 }}>
+                {(sel.noConviene || []).map((x) => (
+                  <li key={x}>{x}</li>
+                ))}
+              </ul>
+
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Stack recomendado</div>
+              <pre
                 style={{
-                  padding: "10px 12px",
+                  marginTop: 8,
+                  padding: 12,
                   borderRadius: 12,
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "rgba(255,255,255,0.9)",
-                  fontWeight: 900,
-                  cursor: "pointer",
+                  background: "rgba(15,23,42,0.04)",
+                  border: "1px solid rgba(15,23,42,0.08)",
+                  overflow: "auto",
+                  fontSize: 12,
                 }}
               >
-                Cerrar
-              </button>
-            </div>
+{JSON.stringify(sel.stackRecomendado, null, 2)}
+              </pre>
 
-            {sel && (
-              <>
-                <div style={{ marginTop: 14, fontSize: 22, fontWeight: 950, color: BEACH.text }}>{sel.nombre}</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Salidas</div>
+              <div style={{ marginTop: 6 }}>{(sel.salidas || []).join(" · ")}</div>
+
+              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Métricas</div>
+              <div style={{ marginTop: 6, color: BEACH.muted, fontWeight: 800 }}>
+                Facilidad: {sel.facilidad} · Velocidad: {sel.velocidad} · Performance: {sel.performance} · Ecosistema:{" "}
+                {sel.ecosistema}
+              </div>
+
+              {sel.notas ? (
+                <>
+                  <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Notas</div>
+                  <div style={{ marginTop: 6, lineHeight: 1.4 }}>{sel.notas}</div>
+                </>
+              ) : null}
+
+              <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px solid rgba(15,23,42,0.10)" }}>
+                <div style={{ fontWeight: 950, color: BEACH.text }}>Recomendación rápida (para el creador de apps)</div>
                 <div style={{ marginTop: 6, color: BEACH.muted, fontWeight: 800 }}>
-                  Categoría: <b>{sel.categoria}</b>
+                  Próximo paso: el “Director” le pasa parámetros (plataforma, urgencia, presupuesto, performance, etc.) y
+                  este módulo devuelve el stack sugerido.
                 </div>
-
-                <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>¿Para qué sirve?</div>
-                <div style={{ marginTop: 8 }}>
-                  {sel.para.map((x) => (
-                    <div key={x} style={{ padding: "6px 0", fontWeight: 800, color: BEACH.text }}>{x}</div>
-                  ))}
-                </div>
-
-                <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Notas</div>
-                <div style={{ marginTop: 8, color: BEACH.text, fontWeight: 700, lineHeight: 1.4 }}>{sel.nota}</div>
-
-                <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Ejemplos</div>
-                <div style={{ marginTop: 8 }}>
-                  {sel.ejemplos.map((x) => (
-                    <div key={x} style={{ padding: "6px 0", fontWeight: 800, color: BEACH.text }}>{x}</div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
+              </div>
+            </>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 }
