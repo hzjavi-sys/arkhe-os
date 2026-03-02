@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+import InteligenciasTabs from "./InteligenciasTabs";
 type Me = { userId: number; email: string; role: string; empresaId?: number | null } | null;
 
 export default function AppShell({
@@ -194,6 +195,21 @@ export default function AppShell({
               </nav>
             {/* BEACH_OS_INTEL_TABS (tabs fijos arriba del menú) */}
             {pathname?.startsWith("/inteligencias") && (
+              <div style={{ marginTop: 10 }}>
+                <InteligenciasTabs
+                  active={
+                    pathname.startsWith("/inteligencias/legal")
+                      ? "legal"
+                      : pathname.startsWith("/inteligencias/ia")
+                      ? "ia"
+                      : pathname.startsWith("/inteligencias/agente") || pathname.startsWith("/inteligencias/agent")
+                      ? "agente"
+                      : pathname.startsWith("/inteligencias/lenguajes")
+                      ? "lenguajes"
+                      : "profesiones"
+                  }
+                />
+              </div>
             )}
 
 
