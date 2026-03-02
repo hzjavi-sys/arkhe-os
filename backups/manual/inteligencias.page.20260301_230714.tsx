@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import InteligenciasTabs from "../../components/arkhe/InteligenciasTabs";
 
 type Item = {
   id?: string;
@@ -175,6 +176,8 @@ export default function InteligenciasPage() {
   return (
     <div style={styles.page}>
       <div style={{ fontSize: 13, fontWeight: 900, color: "#334155" }}>Panel</div>
+      <InteligenciasTabs active="profesiones" />
+
       <div style={styles.headerRow}>
         <div style={styles.title}>
           Profesiones <span style={styles.count}>({filtradas.length})</span>

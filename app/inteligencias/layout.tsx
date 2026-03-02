@@ -1,40 +1,42 @@
 "use client";
-
 import React from "react";
-import AppShell from "../../components/arkhe/AppShell";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AppShell from "../../components/arkhe/AppShell";
+import InteligenciasTabs from "../../components/arkhe/InteligenciasTabs";
+import { BEACH } from "../../components/diseno/theme";
+
+function activeFromPath(p: string) {
+  if (p.startsWith("/inteligencias/legal")) return "legal";
+  if (p.startsWith("/inteligencias/ia")) return "ia";
+  if (p.startsWith("/inteligencias/agente")) return "agente";
+  if (p.startsWith("/inteligencias/lenguajes")) return "lenguajes";
+  return "profesiones";
+}
 
 export default function InteligenciasLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname() || "/";
-
-  const pill = (active: boolean): React.CSSProperties => ({
-    display: "inline-flex",
-    alignItems: "center",
-    gap: 8,
-    padding: "10px 16px",
-    borderRadius: 14,
-    border: active ? "1px solid #0f172a" : "1px solid rgba(15,23,42,0.18)",
-    background: active ? "#0f172a" : "rgba(255,255,255,0.92)",
-    color: active ? "#fff" : "#0f172a",
-    fontWeight: 900,
-    textDecoration: "none",
-    boxShadow: "0 10px 26px rgba(2,6,23,0.10)",
-  });
-
-  const is = (href: string) => pathname === href || pathname.startsWith(href + "/");
+  const pathname = usePathname() || "";
+  const active = activeFromPath(pathname) as any;
 
   return (
     <AppShell title="Inteligencias">
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <Link href="/inteligencias" style={pill(is("/inteligencias"))}>👥 Profesiones</Link>
-          <Link href="/inteligencias/legal" style={pill(is("/inteligencias/legal"))}>📜 Legislación</Link>
-          <Link href="/inteligencias/ia" style={pill(is("/inteligencias/ia"))}>🤖 IA Central</Link>
-          <Link href="/inteligencias/agente" style={pill(is("/inteligencias/agente"))}>🧠 Agente</Link>
+      <div
+        style={{
+          borderRadius: 22,
+          background: BEACH.glassBg,
+          border: BEACH.glassBorder,
+          boxShadow: BEACH.shadow,
+          padding: 18,
+          backdropFilter: `blur(${BEACH.blurPx}px)`,
+        }}
+      >
+        <div style={{ fontSize: 22, fontWeight: 950, color: BEACH.text }}>Inteligencias</div>
+        <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 700 }}>Panel</div>
+
+        <div style={{ marginTop: 14 }}>
+          <InteligenciasTabs active={active} />
         </div>
 
-        <div>{children}</div>
+        <div style={{ marginTop: 16 }}>{children}</div>
       </div>
     </AppShell>
   );
