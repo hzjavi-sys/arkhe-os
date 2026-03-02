@@ -66,7 +66,7 @@ export default function LenguajesPage() {
     background: "rgba(255,255,255,0.92)",
     border: "1px solid rgba(15,23,42,0.10)",
     boxShadow: "0 10px 26px rgba(2,6,23,0.10)",
-    color: BEACH.text,
+    color: "#0f172a",
     cursor: "pointer",
     textAlign: "left",
   };
@@ -74,7 +74,7 @@ export default function LenguajesPage() {
   return (
     <>
       <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-        <div style={{ fontSize: 18, fontWeight: 950, color: BEACH.text }}>
+        <div style={{ fontSize: 18, fontWeight: 950, color: "#0f172a" }}>
           Lenguajes ({filtrados.length})
         </div>
 
@@ -90,7 +90,7 @@ export default function LenguajesPage() {
             background: "rgba(255,255,255,0.85)",
             outline: "none",
             fontWeight: 700,
-            color: BEACH.text,
+            color: "#0f172a",
           }}
         />
 
@@ -103,7 +103,7 @@ export default function LenguajesPage() {
             border: "1px solid rgba(15,23,42,0.14)",
             background: "rgba(255,255,255,0.85)",
             fontWeight: 800,
-            color: BEACH.text,
+            color: "#0f172a",
           }}
         >
           <option value="todos">Todas</option>
@@ -121,13 +121,13 @@ export default function LenguajesPage() {
           {filtrados.map((l) => (
             <div key={l.id} style={card} onClick={() => setSel(l)}>
               <div style={{ fontWeight: 950 }}>{l.nombre}</div>
-              <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 800, fontSize: 12 }}>
+              <div style={{ marginTop: 4, color: "#475569", fontWeight: 800, fontSize: 12 }}>
                 {l.categoria} · {l.performance} perf · {l.velocidad} velocidad
               </div>
-              <div style={{ marginTop: 8, color: BEACH.text, fontWeight: 700, fontSize: 13, lineHeight: 1.25 }}>
+              <div style={{ marginTop: 8, color: "#0f172a", fontWeight: 700, fontSize: 13, lineHeight: 1.25 }}>
                 {l.queEs}
               </div>
-              <div style={{ marginTop: 8, color: BEACH.muted, fontWeight: 700, fontSize: 12 }}>
+              <div style={{ marginTop: 8, color: "#475569", fontWeight: 700, fontSize: 12 }}>
                 Plataformas: {(l.plataformas || []).join(", ")}
               </div>
             </div>
@@ -146,32 +146,32 @@ export default function LenguajesPage() {
           }}
         >
           {!sel ? (
-            <div style={{ color: BEACH.muted, fontWeight: 800 }}>
+            <div style={{ color: "#475569", fontWeight: 800 }}>
               Elegí un lenguaje para ver detalle (sirve para decidir con qué construir la app).
             </div>
           ) : (
             <>
-              <div style={{ fontSize: 20, fontWeight: 950, color: BEACH.text }}>{sel.nombre}</div>
-              <div style={{ marginTop: 4, color: BEACH.muted, fontWeight: 800 }}>{sel.categoria}</div>
+              <div style={{ fontSize: 20, fontWeight: 950, color: "#0f172a" }}>{sel.nombre}</div>
+              <div style={{ marginTop: 4, color: "#475569", fontWeight: 800 }}>{sel.categoria}</div>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Qué es</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Qué es</div>
               <div style={{ marginTop: 6, lineHeight: 1.4 }}>{sel.queEs}</div>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Dónde brilla</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Dónde brilla</div>
               <ul style={{ marginTop: 6 }}>
                 {(sel.brillaEn || []).map((x) => (
                   <li key={x}>{x}</li>
                 ))}
               </ul>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Dónde NO conviene</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Dónde NO conviene</div>
               <ul style={{ marginTop: 6 }}>
                 {(sel.noConviene || []).map((x) => (
                   <li key={x}>{x}</li>
                 ))}
               </ul>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Stack recomendado</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Stack recomendado</div>
               <pre
                 style={{
                   marginTop: 8,
@@ -186,25 +186,25 @@ export default function LenguajesPage() {
 {JSON.stringify(sel.stackRecomendado, null, 2)}
               </pre>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Salidas</div>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Salidas</div>
               <div style={{ marginTop: 6 }}>{(sel.salidas || []).join(" · ")}</div>
 
-              <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Métricas</div>
-              <div style={{ marginTop: 6, color: BEACH.muted, fontWeight: 800 }}>
+              <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Métricas</div>
+              <div style={{ marginTop: 6, color: "#475569", fontWeight: 800 }}>
                 Facilidad: {sel.facilidad} · Velocidad: {sel.velocidad} · Performance: {sel.performance} · Ecosistema:{" "}
                 {sel.ecosistema}
               </div>
 
               {sel.notas ? (
                 <>
-                  <div style={{ marginTop: 14, fontWeight: 950, color: BEACH.text }}>Notas</div>
+                  <div style={{ marginTop: 14, fontWeight: 950, color: "#0f172a" }}>Notas</div>
                   <div style={{ marginTop: 6, lineHeight: 1.4 }}>{sel.notas}</div>
                 </>
               ) : null}
 
               <div style={{ marginTop: 18, paddingTop: 14, borderTop: "1px solid rgba(15,23,42,0.10)" }}>
-                <div style={{ fontWeight: 950, color: BEACH.text }}>Recomendación rápida (para el creador de apps)</div>
-                <div style={{ marginTop: 6, color: BEACH.muted, fontWeight: 800 }}>
+                <div style={{ fontWeight: 950, color: "#0f172a" }}>Recomendación rápida (para el creador de apps)</div>
+                <div style={{ marginTop: 6, color: "#475569", fontWeight: 800 }}>
                   Próximo paso: el “Director” le pasa parámetros (plataforma, urgencia, presupuesto, performance, etc.) y
                   este módulo devuelve el stack sugerido.
                 </div>
