@@ -1,6 +1,5 @@
 "use client";
 
-import SystemLayout from "../design/SystemLayout";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -49,9 +48,7 @@ export default function AppShell({
       if (cfgRef.current && !cfgRef.current.contains(t)) setOpenConfig(false);
     }
     document.addEventListener("click", onDoc);
-    return (
-    <SystemLayout>
-) => document.removeEventListener("click", onDoc);
+    return () => document.removeEventListener("click", onDoc);
   }, []);
 
   async function logout() {
@@ -249,6 +246,5 @@ export default function AppShell({
         </main>
       </div>
     </div>
-    </SystemLayout>
   );
 }
