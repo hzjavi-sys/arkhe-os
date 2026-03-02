@@ -202,7 +202,7 @@ export default function AppShell({
                       ? "legal"
                       : pathname.startsWith("/inteligencias/ia")
                       ? "ia"
-                      : pathname.startsWith("/inteligencias/agente") or pathname.startsWith("/inteligencias/agent")
+                      : pathname.startsWith("/inteligencias/agente") || pathname.startsWith("/inteligencias/agent")
                       ? "agente"
                       : pathname.startsWith("/inteligencias/lenguajes")
                       ? "lenguajes"
