@@ -174,17 +174,8 @@ export default function AppShell({
   };
 
   return (
-    \1
-      <style>{`
-        /* BEACH_OS_TYPO */
-        html, body { font-size: 18px; }
-        body { line-height: 1.35; }
-        h1 { font-size: 30px; font-weight: 950; letter-spacing: -0.02em; }
-        h2 { font-size: 22px; font-weight: 900; letter-spacing: -0.01em; }
-        h3 { font-size: 18px; font-weight: 900; }
-        button, input, select, textarea { font-size: 16px; }
-      `}</style>
-<div style={styles.page}>
+    <SystemLayout>
+    <div style={styles.page}>
       <div style={styles.overlay}>
         <div style={styles.topbar}>
           <div style={styles.topInner}>
