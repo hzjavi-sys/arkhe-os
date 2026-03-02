@@ -1,0 +1,111 @@
+{
+  "pais": "Uruguay",
+  "codigo": "UY",
+  "moneda": "UYU",
+  "version": "v0.1",
+  "updatedAt": "2026-03-02T18:39:20.712778Z",
+  "secciones": [
+    {
+      "id": "constitucion",
+      "titulo": "Constitución",
+      "descripcion": "Texto constitucional y actualizaciones oficiales.",
+      "fuentes": [
+        {
+          "nombre": "IMPO (Normativa Uruguay)",
+          "url": "https://www.impo.com.uy/"
+        }
+      ]
+    },
+    {
+      "id": "codigos",
+      "titulo": "Códigos principales",
+      "descripcion": "Código Civil, Penal, Comercio y normativa consolidada.",
+      "fuentes": [
+        {
+          "nombre": "IMPO (Normativa Uruguay)",
+          "url": "https://www.impo.com.uy/"
+        }
+      ]
+    },
+    {
+      "id": "trabajo",
+      "titulo": "Trabajo y Seguridad Social",
+      "descripcion": "Normas laborales, BPS, MTSS: nóminas, liquidación, despidos, aportes, convenios.",
+      "fuentes": [
+        {
+          "nombre": "MTSS",
+          "url": "https://www.gub.uy/ministerio-trabajo-seguridad-social/"
+        },
+        {
+          "nombre": "BPS",
+          "url": "https://www.bps.gub.uy/"
+        }
+      ],
+      "subtemas": [
+        "Liquidación de sueldos",
+        "Aportes y nóminas",
+        "Despidos y egresos",
+        "Accidentes de trabajo (referencias oficiales)",
+        "Checklist de contratación"
+      ]
+    },
+    {
+      "id": "impuestos_dgi",
+      "titulo": "Impuestos y Facturación (DGI)",
+      "descripcion": "DGI: obligaciones, certificados, facturación electrónica, implementación y validaciones.",
+      "fuentes": [
+        {
+          "nombre": "DGI",
+          "url": "https://www.gub.uy/direccion-general-impositiva/"
+        }
+      ],
+      "subtemas": [
+        "Facturación electrónica (implementación)",
+        "Certificados / constancias",
+        "Regímenes y obligaciones",
+        "Pegado/instalación de certificado (guía técnica)"
+      ]
+    },
+    {
+      "id": "comercio_exterior_aduana",
+      "titulo": "Comercio exterior y Aduanas",
+      "descripcion": "Normativa de comercio exterior, aranceles, procedimientos y despachante de aduana.",
+      "fuentes": [
+        {
+          "nombre": "Aduanas (DNAs)",
+          "url": "https://www.aduanas.gub.uy/"
+        },
+        {
+          "nombre": "MIEM",
+          "url": "https://www.gub.uy/ministerio-industria-energia-mineria/"
+        }
+      ],
+      "subtemas": [
+        "Aranceles (referencias oficiales)",
+        "Despachante de aduana (marco normativo)",
+        "Trámites frecuentes (exportación/importación)",
+        "Checklist documental"
+      ]
+    },
+    {
+      "id": "ministerios_entes",
+      "titulo": "Ministerios y entes (índice)",
+      "descripcion": "Índice de organismos para ampliar por país (UY).",
+      "fuentes": [
+        {
+          "nombre": "Portal del Estado (UY)",
+          "url": "https://www.gub.uy/"
+        }
+      ],
+      "items": [
+        "Ministerio de Trabajo y Seguridad Social (MTSS)",
+        "Banco de Previsión Social (BPS)",
+        "Dirección General Impositiva (DGI)",
+        "Ministerio de Industria, Energía y Minería (MIEM)",
+        "Ministerio de Ganadería, Agricultura y Pesca (MGAP)",
+        "Ministerio de Turismo (MINTUR)",
+        "Ministerio de Ambiente (MA)"
+      ]
+    }
+  ]
+}
