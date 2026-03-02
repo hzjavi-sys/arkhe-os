@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import InteligenciasTabs from "./InteligenciasTabs";
 type Me = { userId: number; email: string; role: string; empresaId?: number | null } | null;
 
 export default function AppShell({
@@ -193,25 +192,6 @@ export default function AppShell({
                 <Link href="/inteligencias" style={styles.pill(pathname.startsWith("/inteligencias"))}>Inteligencias</Link>
                 <Link href="/integraciones" style={styles.pill(pathname.startsWith("/integraciones"))}>Integraciones</Link>
               </nav>
-            {/* BEACH_OS_INTEL_TABS (tabs fijos arriba del menú) */}
-            {pathname?.startsWith("/inteligencias") && (
-              <div style={{ marginTop: 10 }}>
-                <InteligenciasTabs
-                  active={
-                    pathname.startsWith("/inteligencias/legal")
-                      ? "legal"
-                      : pathname.startsWith("/inteligencias/ia")
-                      ? "ia"
-                      : pathname.startsWith("/inteligencias/agente") or pathname.startsWith("/inteligencias/agent")
-                      ? "agente"
-                      : pathname.startsWith("/inteligencias/lenguajes")
-                      ? "lenguajes"
-                      : "profesiones"
-                  }
-                />
-              </div>
-            )}
-
 
               <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
                 <div ref={cfgRef} style={{ position: "relative" }}>
