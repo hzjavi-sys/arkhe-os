@@ -174,6 +174,7 @@ export default function AppShell({
   };
 
   return (
+    \1
       <style>{`
         /* BEACH_OS_TYPO */
         html, body { font-size: 18px; }
