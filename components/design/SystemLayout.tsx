@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { BEACH_THEME as T } from "./theme";
 
@@ -14,13 +13,7 @@ export default function SystemLayout({ children }: { children: React.ReactNode }
         backgroundAttachment: "fixed",
       }}
     >
-      {/* capa suave para legibilidad */}
-      <div
-        style={{
-          minHeight: "100vh",
-          backdropFilter: `blur(${T.blurPx}px)`,
-        }}
-      >
+      <div style={{ minHeight: "100vh", backdropFilter: `blur(${T.blurPx}px)` }}>
         {children}
       </div>
     </div>

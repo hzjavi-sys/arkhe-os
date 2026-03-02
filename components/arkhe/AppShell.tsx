@@ -1,9 +1,9 @@
 "use client";
 
-import SystemLayout from "../design/SystemLayout";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import SystemLayout from "../design/SystemLayout";
 
 type Me = { userId: number; email: string; role: string; empresaId?: number | null } | null;
 
@@ -49,9 +49,7 @@ export default function AppShell({
       if (cfgRef.current && !cfgRef.current.contains(t)) setOpenConfig(false);
     }
     document.addEventListener("click", onDoc);
-    return (
-    <SystemLayout>
-) => document.removeEventListener("click", onDoc);
+    return () => document.removeEventListener("click", onDoc);
   }, []);
 
   async function logout() {
@@ -176,6 +174,7 @@ export default function AppShell({
   };
 
   return (
+    <SystemLayout>
     <div style={styles.page}>
       <div style={styles.overlay}>
         <div style={styles.topbar}>
