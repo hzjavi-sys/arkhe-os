@@ -168,6 +168,7 @@ export default function AppShell({
               <Link href="/proyectos" style={styles.pill(pathname.startsWith("/proyectos") || pathname === "/")}>Proyectos</Link>
               <Link href="/inteligencias" style={styles.pill(pathname.startsWith("/inteligencias"))}>Inteligencias</Link>
               <Link href="/integraciones" style={styles.pill(pathname.startsWith("/integraciones"))}>Integraciones</Link>
+              <Link href="/importaciones" style={styles.pill(pathname.startsWith("/importaciones"))}>Importaciones</Link>
             </nav>
 
             <div style={styles.right}>

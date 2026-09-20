@@ -28,6 +28,7 @@ export default function HomePage() {
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 12 }}>
         <a href="/" style={chip}>Proyectos</a>
         <a href="/notas" style={chip}>Notas</a>
+        <a href="/importaciones" style={chip}>Importaciones</a>
         <a href="/admin/users" style={chip}>Admin Usuarios</a>
         <a href="/admin/empresas" style={chip}>Admin Empresas</a>
       </div>
